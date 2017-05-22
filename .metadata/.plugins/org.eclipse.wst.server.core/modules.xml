@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<modules>
-  <module moduleId="org.eclipse.jst.jee.server:J20170518" serverId="Tomcat v8.0 Server at localhost"/>
-  <module moduleId="org.eclipse.jst.jee.server:J20170517" serverId="Tomcat v8.0 Server at localhost"/>
-  <module moduleId="org.eclipse.jst.jee.server:MyServlet" serverId="Tomcat v8.0 Server at localhost"/>
-  <module moduleId="org.eclipse.jst.jee.server:MyFirstDynamicWeb" serverId="Tomcat v8.0 Server at localhost"/>
-</modules>
