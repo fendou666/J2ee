@@ -1,0 +1,4 @@
+jdbcLib=oracle.jdbc.OracleDriver
+conn=jdbc:oracle:thin:@localhost:1521:orcl
+user=scott
+pwd=tiger
