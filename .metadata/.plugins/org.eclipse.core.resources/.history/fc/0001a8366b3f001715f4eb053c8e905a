@@ -1,0 +1,19 @@
+package com.chinasofti.study;
+
+public class Message {
+	private String title;
+	private UserInfo user;
+	private String content;
+	private String msgTime;
+	public Message(){
+		
+	}
+	
+	public Message(String title, UserInfo user, String content, String msgTime) {
+		this.title = title;
+		this.user = user;
+		this.content = content;
+		this.msgTime = msgTime;
+	}
+	
+}

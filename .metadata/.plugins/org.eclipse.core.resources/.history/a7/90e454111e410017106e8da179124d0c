@@ -1,0 +1,38 @@
+package com.exercise.javaneed;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class CatchFileManage {
+	
+	
+	public String getCatchFromLocalFile(String path){
+		String count = "";
+		File countFile = new File(path);
+		BufferedReader br = new BufferedReader(new FileReader(countFile));
+		try {
+			count = br.readLine();
+			br.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return count;
+	}
+	
+	public void updataCatchToFile(String path, String count){
+		File countFile = new File(path);
+		BufferedWriter bw = new BufferedWriter(new FileWriter(countFile));
+		try {
+			bw.write(count);
+			bw.flush();
+			bw.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		d
+	}
+}

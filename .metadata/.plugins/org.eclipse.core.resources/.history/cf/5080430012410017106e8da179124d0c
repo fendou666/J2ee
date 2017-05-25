@@ -1,0 +1,5 @@
+package com.exercise.filter;
+
+public class RankFilter {
+
+}

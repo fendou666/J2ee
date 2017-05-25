@@ -1,0 +1,17 @@
+package com.exercise.javaneed;
+
+import java.io.File;
+
+public class CatchFileManage {
+	
+	
+	public String getCatchFromLocalFile(String path){
+		File countFile = new File(path);
+		
+		
+	}
+	
+	public void updataCatchToFile(){
+		
+	}
+}

@@ -1,0 +1,8 @@
+package com.chinasofti.study;
+
+public class Message {
+	private String title;
+	private UserInfo user;
+	private String content;
+	private String time;
+}

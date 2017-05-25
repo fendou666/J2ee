@@ -1,0 +1,13 @@
+package com.exercise.javaneed;
+
+public class CatchFileManage {
+	
+	
+	public String getCatchFromLocalFile(){
+		
+	}
+	
+	public void updataCatchToFile(){
+		
+	}
+}

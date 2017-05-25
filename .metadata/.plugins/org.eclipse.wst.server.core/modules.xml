@@ -4,4 +4,7 @@
   <module moduleId="org.eclipse.jst.jee.server:J20170517" serverId="Tomcat v8.0 Server at localhost"/>
   <module moduleId="org.eclipse.jst.jee.server:MyServlet" serverId="Tomcat v8.0 Server at localhost"/>
   <module moduleId="org.eclipse.jst.jee.server:MyFirstDynamicWeb" serverId="Tomcat v8.0 Server at localhost"/>
+  <module moduleId="org.eclipse.jst.jee.server:J20170524" serverId="Tomcat v8.0 Server at localhost"/>
+  <module moduleId="org.eclipse.jst.jee.server:J20170523" serverId="Tomcat v8.0 Server at localhost"/>
+  <module moduleId="org.eclipse.jst.jee.server:J20170522" serverId="Tomcat v8.0 Server at localhost"/>
 </modules>

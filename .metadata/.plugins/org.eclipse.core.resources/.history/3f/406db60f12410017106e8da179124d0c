@@ -1,0 +1,7 @@
+package com.exercise.filter;
+
+import javax.servlet.Filter;
+
+public class RankFilter implements Filter {
+
+}

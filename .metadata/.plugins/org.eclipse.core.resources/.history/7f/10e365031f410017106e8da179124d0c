@@ -1,0 +1,20 @@
+package com.exercise.listener;
+
+import javax.servlet.ServletContextEvent;
+import javax.servlet.ServletContextListener;
+
+import com.exercise.javaneed.CatchFileManage;
+
+public class ListenerLoginCount implements ServletContextListener {
+
+	@Override
+	public void contextInitialized(ServletContextEvent sce) {
+		new CatchFileManage()
+	}
+
+	@Override
+	public void contextDestroyed(ServletContextEvent sce) {
+
+	}
+
+}

@@ -1,0 +1,19 @@
+package com.exercise.java;
+
+public class UserInfo {
+	private String name;
+	private String pwd;
+	private String qx;
+	private String id;
+	
+	public UserInfo(){
+		
+	}
+	
+	public UserInfo(String name,  String pwd) {
+		this.name = name;
+		this.pwd = pwd;
+	}
+	
+	
+}

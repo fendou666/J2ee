@@ -1,4 +1,0 @@
-driver=oracle.jdbc.OracleDriver;
-oracle=;
-user=scott;
-pwd=tiger;
