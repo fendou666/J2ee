@@ -2,15 +2,15 @@
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
   <display-name>J20170525new</display-name>
   <filter>
-  	<filter-name>CharsetFilter</filter-name>
-  	<filter-class>com.exercise.filter.CharsetFilter</filter-class>
+  	<filter-name></filter-name>
+  	<filter-class></filter-class>
   </filter>
   <filter-mapping>
-  	<filter-name>CharsetFilter</filter-name>
-  	<url-pattern>/*</url-pattern>
-  	<dispatcher>REQUEST</dispatcher>
-  	<dispatcher>FORWARD</dispatcher>
+  	<filter-name></filter-name>
+  	<url-pattern></url-pattern>
+  	<dispatcher></dispatcher>
   </filter-mapping>
+  
   <listener>
   	<listener-class>com.exercise.servletctxlsn.LoginUsersListUpd</listener-class>
   </listener>
