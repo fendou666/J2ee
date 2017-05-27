@@ -1,0 +1,44 @@
+package com.study.servletImg;
+
+import java.awt.Font;
+import java.awt.Graphics;
+import java.awt.image.BufferedImage;
+import java.io.IOException;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * Servlet implementation class CheckImgAuthCode
+ */
+@WebServlet("/CheckImgAuthCode")
+public class CheckImgAuthCode extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    public CheckImgAuthCode() {
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// 1. 创建缓存验证码画板对象
+		BufferedImage authImg = new BufferedImage(120, 80, BufferedImage.TYPE_INT_RGB);
+		// 2. 通过画板对象获取画笔
+		Graphics g = authImg.getGraphics();
+		// 3. 设置画笔字体
+		g.setFont(new Font(getServletName(), , size));
+		
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+	}
+
+}

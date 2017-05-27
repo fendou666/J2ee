@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+	钻石会员成功页面
 </body>
 </html>

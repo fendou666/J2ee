@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+	权限不足, 各个权限不同提示不同的错误信息，暂时不做了
 </body>
 </html>

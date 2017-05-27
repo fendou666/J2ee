@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+	黄金会员登陆成功页面
 </body>
 </html>

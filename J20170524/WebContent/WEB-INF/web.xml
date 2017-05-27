@@ -19,7 +19,7 @@
   </filter>
   <filter-mapping>
     <filter-name>RankFilter</filter-name>
-    <url-pattern>/Test/*</url-pattern>
+    <url-pattern>/WorkAfter/Vip/*</url-pattern>
     <dispatcher>REQUEST</dispatcher>
     <dispatcher>FORWARD</dispatcher>
     <dispatcher>INCLUDE</dispatcher>
