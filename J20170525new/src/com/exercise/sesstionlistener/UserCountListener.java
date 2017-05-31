@@ -20,10 +20,13 @@ public class UserCountListener implements HttpSessionListener {
 	public void sessionDestroyed(HttpSessionEvent se) {
 		System.out.println("session销毁将用户信息注销");
 		ServletContext app = (ServletContext)se.getSession().getAttribute("app");
-		HashSet<UserInfo> userAry = (HashSet<UserInfo>)app.getAttribute("userSet");
-		userAry.remove(se.getSession().getAttribute("user"));
-		app.setAttribute("userSet", userAry);
-		System.out.println("当前用户sesstion结束，在线用户被remove");
+		// 防止其他session起作用
+		if(app!=null || !app.equals("")){
+			HashSet<UserInfo> userAry = (HashSet<UserInfo>)app.getAttribute("userSet");
+			userAry.remove(se.getSession().getAttribute("user"));
+			app.setAttribute("userSet", userAry);
+			System.out.println("当前用户sesstion结束，在线用户被remove");
+		}
 	}
 
 }

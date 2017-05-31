@@ -1,9 +1,0 @@
-package com.chinasofti.study;
-
-public class UserInfo {
-	private String name;
-	private int id;
-	private String pwd;
-	
-	
-}

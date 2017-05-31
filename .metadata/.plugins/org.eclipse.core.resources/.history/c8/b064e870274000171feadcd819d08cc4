@@ -1,4 +1,0 @@
-driver=oracle.jdbc.Oracle.Driver
-conn=jdbc:oracle:thin:@175.3.13.254:1521:orcl
-user=scott
-pwd=tiger

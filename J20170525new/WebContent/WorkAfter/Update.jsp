@@ -7,7 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-
 	<form action="<%=request.getContextPath() %>/ServletIO" method="post"> 
 		<input type="file"   />
 		<input type="submit" value="上传文件" />
