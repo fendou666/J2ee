@@ -1,0 +1,41 @@
+<%@page import="com.study.java.UserInfo"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<% 
+		String str1 = "adsfasdf";
+		int num1 = 10;
+		UserInfo u = new UserInfo();
+		u.setId("11111111");
+		u.setName("小明");
+		
+		String [] strAry = new String[]{"aaa", "bbb", "ccc", "ddd"};
+		request.setAttribute("str", str1);
+		request.setAttribute("num", num1);
+		request.setAttribute("userInfo", u);
+		request.setAttribute("strAry", strAry);
+	%>
+	str : ${requestScope.str}
+	num : ${requestScope.num}
+	UserInfo : ${requestScope.userInfo}
+	UserInfo_id : ${requestScope.userInfo.id}
+	UserInfo_name : ${requestScope.userInfo.name}
+	UserInfo_id : ${requestScope.userInfo["id"]}
+	UserInfo_name : ${requestScope.userInfo["name"]}
+	
+	strAry : ${requestScope.strAry}
+	strAry0 : ${requestScope.strAry[0]}
+	strAry1 : ${requestScope.strAry[1]}
+	strAry2 : ${requestScope.strAry[2]}
+	strAry3 : ${requestScope.strAry[3]}
+	
+	
+	
+</body>
+</html>

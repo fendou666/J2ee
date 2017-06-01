@@ -1,8 +1,0 @@
-package com.exercise.java;
-
-public class UserInfo {
-	private String name;
-	private String pwd;
-	
-	
-}

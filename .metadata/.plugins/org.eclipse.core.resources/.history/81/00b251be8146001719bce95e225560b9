@@ -1,0 +1,6 @@
+package com.study.java;
+
+public class UserInfo {
+	private String id;
+	private String Name;
+}

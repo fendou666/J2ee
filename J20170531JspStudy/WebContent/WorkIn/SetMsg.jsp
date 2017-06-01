@@ -13,6 +13,7 @@
 		if(ret!=null){
 			out.write("<div style=\"color:red;\">" + ret +"</div>");
 		}
+		System.out.println( "SetMsg_jsp path"+ request.getRealPath("/WorkIn/SetMsg_jsp.java"));
 	%>
 	<form action="Msg.jsp" method="post">
 		<p>
