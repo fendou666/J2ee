@@ -1,0 +1,27 @@
+package com.study.mvc.tools;
+
+import java.io.IOException;
+import java.util.Properties;
+
+public class DBUtil {
+	private static String driver;
+	private static String url;
+	private static String user;
+	private static String pwd;
+	private static String conn;
+	
+	static{
+		
+	}
+	private static void getDBPropertiesInfo(){
+		Properties pro = new Properties();
+		try {
+			pro.load(DBUtil.class.getResourceAsStream("oracleInfo.properties"));
+			driver = pro.getProperty("driver", "oracle.jdbc.OracleDriver");
+			
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+}

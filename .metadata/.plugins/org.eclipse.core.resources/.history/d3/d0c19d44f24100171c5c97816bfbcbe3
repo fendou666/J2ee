@@ -1,9 +1,0 @@
-package com.study.filedownload;
-
-import javax.servlet.http.HttpServlet;
-
-public class Download extends HttpServlet {
-
-	private static final long serialVersionUID = 1L;
-
-}

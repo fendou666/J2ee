@@ -1,7 +1,0 @@
-package com.exercise.servletctxlsn;
-
-import javax.servlet.ServletContextListener;
-
-public class LoginUsersListUpd implements ServletContextListener{
-
-}

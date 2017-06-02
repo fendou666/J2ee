@@ -1,9 +1,0 @@
-package com.study.servlet;
-
-import javax.servlet.http.HttpServlet;
-
-public class AjaxServlet extends HttpServlet {
-
-	private static final long serialVersionUID = 1L;
-
-}

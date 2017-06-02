@@ -1,7 +1,0 @@
-package com.study.filedownload;
-
-import javax.servlet.http.HttpServlet;
-
-public class Download extends HttpServlet {
-
-}

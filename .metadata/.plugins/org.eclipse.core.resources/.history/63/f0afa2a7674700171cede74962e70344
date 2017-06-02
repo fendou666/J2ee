@@ -1,0 +1,5 @@
+package com.study.mvc.model.service;
+
+public interface ILoginService {
+
+}

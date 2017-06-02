@@ -1,0 +1,33 @@
+package com.study.mvc.tools;
+
+import java.io.IOException;
+import java.util.Properties;
+
+public class DBUtil {
+	private static String driver;
+	private static String url;
+	private static String user;
+	private static String pwd;
+	private static String conn;
+	
+	static{
+		getDBPropertiesInfo();
+		Class.forName(driver);
+	}
+	private static void getDBPropertiesInfo(){
+		Properties pro = new Properties();
+		try {
+			pro.load(DBUtil.class.getResourceAsStream("oracleInfo.properties"));
+			driver = pro.getProperty("driver", "oracle.jdbc.OracleDriver");
+			url = pro.getProperty("url", "jdbc:oracle:thin:@175.3.13.254:1521:orcl");
+			user = pro.getProperty("user", "scott");
+			pwd = pro.getProperty("pwd", "tiger");
+			if(driver==null){
+				System.out.println("»ñÈ¡Çý¶¯Ê§°Ü");
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+}

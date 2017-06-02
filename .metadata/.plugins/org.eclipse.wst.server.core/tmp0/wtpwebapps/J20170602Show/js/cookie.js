@@ -10,12 +10,13 @@ function setCookie(key, value, expiredays){
 function getCookie(key){
 	var cookieStr = document.cookie;
 	var ret = ""
+	//console.log("all cookie" + cookieStr);
 	if(cookieStr.length>0){
-		var keyIndex = cookiestr.indexOf(key);
+		var keyIndex = cookieStr.indexOf(key);
 		if(keyIndex!=-1){
-			var endIndex = cookiestr.indexof(";", keyIndex);
+			var endIndex = cookieStr.indexOf(";", keyIndex);
 			if(endIndex==-1){
-				endIndex = cookiestr.length;
+				endIndex = cookieStr.length;
 			}
 			ret = cookieStr.substring(keyIndex+key.length + 1, endIndex);
 		}
