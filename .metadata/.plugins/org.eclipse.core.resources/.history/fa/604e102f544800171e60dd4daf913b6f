@@ -1,0 +1,20 @@
+package com.study.mvc.model.dao;
+
+import java.util.HashMap;
+
+import com.study.mvc.model.javabean.StudentInfo;
+import com.study.mvc.tools.DBUtil;
+
+public class LoginDAOImp implements ILoginDAO {
+
+	@Override
+	public StudentInfo cheStudentInfo(StudentInfo stu, String pwd) {
+		StudentInfo stuRet = null;
+		HashMap stuMP = DBUtil.checkStudentInfo(stu, pwd);
+		if(stuMP!=null){
+			
+		}
+		return null;
+	}
+
+}

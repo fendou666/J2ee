@@ -37,7 +37,10 @@ public class LoginServlet extends HttpServlet {
 			ret = 1;
 		}else{
 			ILoginService loginService = new LoginServiceImp();
-			loginService.checkLoginInfo();
+			StudentInfo stu = new StudentInfo();
+			stu.setName(userName);
+			stu = loginService.checkLoginInfo(stu, pwd);
+			System.out.println(stu);
 			/*if(userName.indexOf("小")!=-1){
 				
 			}else{
@@ -45,8 +48,6 @@ public class LoginServlet extends HttpServlet {
 				ret = 2;
 			}*/
 		}
-		StudentInfo sti = new StudentInfo();
-		sti.setName(userName);
 		
 		//4. 控制转发区
 		

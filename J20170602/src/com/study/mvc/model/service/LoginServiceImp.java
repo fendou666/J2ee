@@ -11,8 +11,8 @@ public class LoginServiceImp implements ILoginService {
 		loginDAO = new LoginDAOImp();
 	}
 	@Override
-	public StudentInfo checkLoginInfo() {
-		return loginDAO.cheStudentInfo();
+	public StudentInfo checkLoginInfo(StudentInfo stu, String pwd) {
+		return loginDAO.cheStudentInfo(stu,  pwd);
 	}
 
 }

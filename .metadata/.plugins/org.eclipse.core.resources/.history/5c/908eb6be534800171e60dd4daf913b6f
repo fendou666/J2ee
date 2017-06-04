@@ -1,0 +1,7 @@
+package com.study.mvc.model.service;
+
+import com.study.mvc.model.javabean.StudentInfo;
+
+public interface ILoginService {
+	public StudentInfo checkLoginInfo();
+}

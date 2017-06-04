@@ -36,7 +36,7 @@ public class DBUtil {
 		try {
 			pro.load(DBUtil.class.getResourceAsStream("oracleInfo.properties"));
 			driver = pro.getProperty("driver", "oracle.jdbc.OracleDriver");
-			url = pro.getProperty("url", "jdbc:oracle:thin:@175.3.13.254:1521:orcl");
+			url = pro.getProperty("url", "jdbc:oracle:thin:@127.0.0.1:1521:orcl");
 			user = pro.getProperty("user", "scott");
 			pwd = pro.getProperty("pwd", "tiger");
 			if(driver==null){
@@ -54,19 +54,29 @@ public class DBUtil {
 		}
 		return conn;
 	}
-	private static HashMap checkStudentInfo(StudentInfo stu,String pwd){
-		HashMap mp = null;
+	public static HashMap checkStudentInfo(StudentInfo stu, String pwd){
+		System.out.println("进入数据库");
+		HashMap<String, StudentInfo> mp = null;
 		StudentInfo sti = null;
 		PreparedStatement ps = null;
 		String sql = "select t.studentid, t.name, t.sex, t.age, t.school, t.pwd "
 				+ "from STUDENTINFO t "
-				+ "WHERE t.studentid=? AND t.pwd=?";
+				+ "WHERE t.name=? AND t.pwd=?";
+		System.out.println("conn对象:" +conn);
 		try {
 			ps = conn.prepareStatement(sql);
 			ps.setObject(1, stu.getName());
 			ps.setObject(2, pwd);
 			ResultSet rs = ps.executeQuery();
 			if(rs.next()){
+				sti = new StudentInfo();
+				sti.setNum(Integer.parseInt(rs.getString("studentid")));
+				sti.setName(rs.getString("name"));
+				sti.setSex(rs.getString("sex"));
+				sti.setAge(Integer.parseInt(rs.getString("age")));
+				sti.setSchool(rs.getString("school"));
+				mp = new HashMap<String, StudentInfo>();
+				mp.put("stuInfo", sti);
 				System.out.println("数据库 学生ID" + rs.getString("studentid"));
 			}
 		} catch (SQLException e) {
@@ -76,5 +86,10 @@ public class DBUtil {
 		return mp;
 	}
 	
+	public static void main(String[] args) {
+		StudentInfo stu = new StudentInfo();
+		stu.setName("小明");
+		DBUtil.checkStudentInfo(stu, "123");
+	}
 	
 }

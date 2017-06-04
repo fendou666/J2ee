@@ -1,7 +1,0 @@
-package com.study.sesstionio;
-
-import javax.servlet.http.HttpServlet;
-
-public class ServletIO extends HttpServlet {
-
-}
