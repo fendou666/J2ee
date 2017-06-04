@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<script type="text/javascript">
+	function checkAuthCode(){
+		var xmlHttp;
+		if(window.ActiveXObject){
+			xmlHttp = new ActiveXObject("Msxml2.XMLHTTP");
+		}else{
+			xmlHttp = new XMLHttpRequest();
+		}
+		
+		xmlHttp.onreadystatechange = function(){
+			if(xmlHttp.readyState==4 && xmlHttp.status==200){
+				
+			}
+		}
+		xmlHttp.open("get", "<%=request.getContextPath() %>/CheckImgAuthCode?authCode=" + authCode);
+		xmlHttp.send(null);
+	}
+</script>
+
+
+<body>
+	<form action="TestServlet1">
+			<span>用户名</span>
+			<input type="text" name="userId" id="userid" /> <br>
+			<input type="submit" value="提交" >
+	</form>
+</body>
+</html>

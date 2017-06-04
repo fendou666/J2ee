@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<script type="text/javascript">
+	function testAJAX(){
+		var xmlHttp;
+		if(window.ActiveXObject){
+			xmlHttp = new ActiveXObject("Msxml2.XMLHTTP");
+		}else{
+			xmlHttp = new XMLHttpRequest();
+		}
+		
+		xmlHttp.onreadystatechange = function(){
+			if(xmlHttp.readyState==4 && xmlHttp.status==200){
+				console.log("请求成功");
+			}
+		}
+		console.log("请求成功adsf");
+		xmlHttp.open("get", "TestServlet1?test=" + Math.random());
+		xmlHttp.send(null);
+	}
+</script>
+
+<body>
+	<form action="TestServlet1" method="post">
+			<span>用户名</span>
+			<input type="text" name="userId" id="userid" /> <br>
+			<input type="submit" value="提交" >
+	</form>
+	
+	<button onclick="testAJAX()">AJAX请求，可以GET/POST</button>
+	<div id="showAJAX"></div>
+</body>
+</html>
