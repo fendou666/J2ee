@@ -1,0 +1,19 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	2222
+	<%
+		System.out.println("请求3前");
+		System.out.println("request属性aaa " + request.getAttribute("aaa"));
+		//request.getRequestDispatcher("REQ_RESP3.jsp").forward(request, response);
+		response.sendRedirect("REQ_RESP3.jsp");
+		System.out.println("请求3");
+	%>
+</body>
+</html>

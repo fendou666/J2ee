@@ -7,6 +7,16 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+	<form>
+		<tr>
+			<td>序号</td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+	
+	</form>
 </body>
 </html>

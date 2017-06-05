@@ -1,6 +1,7 @@
 package com.stuty.servlet;
 
 import java.io.IOException;
+import java.util.Enumeration;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
@@ -27,21 +28,31 @@ public class TestServlet2 extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		Cookie[] cks = request.getCookies();
-		if(cks!=null){
-			for(Cookie c: cks){
-				System.out.println("key :" + c.getName() + " value:" + c.getValue());
-			}
-		}
-		request.getSession().setMaxInactiveInterval(30*60);
-		System.out.println("当前session id:" + request.getSession().getId());
-		System.out.println("当前session 有效时长:" + request.getSession().getMaxInactiveInterval());
+//		Cookie[] cks = request.getCookies();
+//		if(cks!=null){
+//			for(Cookie c: cks){
+//				System.out.println("key :" + c.getName() + " value:" + c.getValue());
+//			}
+//		}
+//		request.getSession().setMaxInactiveInterval(30*60);
+//		System.out.println("当前session id:" + request.getSession().getId());
+//		System.out.println("当前session 有效时长:" + request.getSession().getMaxInactiveInterval());
 		//response.getWriter().write("我是TestServlet2的返回值"); //response结束当次请求，并且将session重新设置)
 		
 		ServletContext sc = request.getServletContext();
 		String servlet1Str = (String)sc.getAttribute("servlet1");
 		System.out.println("servlet1Str" + servlet1Str);
-		request.getRequestDispatcher("AllRquest.jsp").forward(request, response);
+		Enumeration<String> abt = sc.getAttributeNames();
+		while (abt.hasMoreElements()) {
+		   String attribute = (String) abt.nextElement();
+		   System.out.println("servlet2 attribute Name:" + attribute);
+		}
+		// 获取初始化参数
+//		String noLoginIP = request.getServletContext().getInitParameter("noLoginIP");
+//		System.out.println("servlet2 noLoginIp:" + noLoginIP);
+		
+		response.getWriter().write("我是TestServlet2的返回值");
+		//request.getRequestDispatcher("AllRquest1.jsp").forward(request, response);
 	}
 
 	/**

@@ -34,12 +34,6 @@ public class TestServlet1 extends HttpServlet {
 		response.setContentType("text/html; charset=UTF-8"); //这个方法设置发送到客户端的响应的内容类型，必须在getWriter之前调用,测试：设置test后会自动下载内容
 		ServletContext sc = request.getServletContext();
 		sc.setAttribute("servlet1", "aaaaaaaaa");
-		Enumeration<String> abt = sc.getAttributeNames();
-		while (abt.hasMoreElements()) {
-		   String attribute = (String) abt.nextElement();
-		   System.out.println("attribute Name:" + attribute);
-		}
-		
 		response.getWriter().write("我是servlet");
 	}
 

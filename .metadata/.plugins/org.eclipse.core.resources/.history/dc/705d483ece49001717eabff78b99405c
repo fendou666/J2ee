@@ -1,0 +1,64 @@
+package com.study.mvc.model.dao;
+
+import java.util.List;
+
+import com.study.mvc.model.javabean.StudentInfo;
+
+public class StudentDAOImp implements IStudentDAO {
+
+	@Override
+	public StudentInfo getStudentByNum(int num) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<StudentInfo> getStudentByName(String name) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<StudentInfo> getStudentBySex(String sex) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<StudentInfo> getStudentByAge(int start, int end) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<StudentInfo> getStudentBySchool(String schoolName) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<StudentInfo> getStudentByCondition(int num, String name,
+			String sex, int start, int end, String schoolName) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean insertStudentInfo(StudentInfo stu) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean deleteStudentInfo(int num) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean saveStudentInfo(StudentInfo stu) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}

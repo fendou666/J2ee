@@ -1,0 +1,14 @@
+package com.study.mvc.model.service;
+
+import java.util.List;
+
+import com.study.mvc.model.javabean.StudentInfo;
+
+public interface IStudentService {
+	public StudentInfo getStudentByNum(int num);
+	public List<StudentInfo> getStudentByName(String name);
+	public List<StudentInfo> getStudentBy(String name);
+	public List<StudentInfo> getStudentByName(String name);
+	public List<StudentInfo> getStudentByName(String name);
+	public List<StudentInfo> getStudentByName(String name);
+}

@@ -1,0 +1,84 @@
+package com.study.mvc.model.service;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+import com.study.mvc.model.javabean.StudentInfo;
+import com.study.mvc.tools.DBUtil;
+
+public class StudentServiceImp implements IStudentService {
+
+	@Override
+	public StudentInfo getStudentByNum(int num) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<StudentInfo> getStudentByName(String name) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<StudentInfo> getStudentBySex(String sex) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<StudentInfo> getStudentByAge(int start, int end) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<StudentInfo> getStudentBySchool(String schoolName) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<StudentInfo> getStudentByCondition(int num, String name,
+			String sex, int start, int end, String schoolName) {
+//		String sql = "SELECT id, stuNum, name, sex, age, gradeFrom FROM studentInfoA WHERE "
+//				+ "id = " + num
+//				+ " AND name = " + name
+//				+ " AND name = " + name
+//				+ " AND name = " + name
+//				+ " AND name = " + name
+//				;
+		List<StudentInfo> stuList = null;
+		String sql = "SELECT id, stuNum, name, sex, age, gradeFrom FROM studentInfoA";
+		ResultSet rs = DBUtil.queryData(sql);
+		if(rs!=null){
+			try {
+				if(rs.isFirst()){
+					stuList = new ArrayList<StudentInfo>();
+				}
+				
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return stuList;
+	}
+
+	@Override
+	public boolean insertStudentInfo(StudentInfo stu) {
+		return false;
+	}
+
+	@Override
+	public boolean deleteStudentInfo(int num) {
+		return false;
+	}
+
+	@Override
+	public boolean saveStudentInfo(StudentInfo stu) {
+		return false;
+	}
+
+}
