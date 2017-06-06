@@ -57,7 +57,15 @@
 							+ "<td>"+tmp.getSex()+"</td>"
 							+ "<td>"+tmp.getAge()+"</td>"
 							+ "<td>"+tmp.getSchool()+"</td>"
-							+ "<td><a href="+ request.getContextPath() + "/OracleOperationServlet?action=cg>修改</a></td>"
+							// 关于这里能不能考虑将指针传过去， 能不能通过设置一个ID然后将一行参数进行传递
+							+ "<td><a href="+ request.getContextPath() + "/WorkIn/UpdateInfo.jsp?id=" 
+																		+ tmp.getId() + "&num="
+																		+ tmp.getNum() + "&name="
+																		+ tmp.getName() + "&sex="
+																		+ tmp.getSex() + "&age="
+																		+ tmp.getAge() + "&school="
+																		+ tmp.getSchool()
+																		 + ">修改</a></td>"
 							+ "<td><a href="+ request.getContextPath() + "/OracleOperationServlet?action=del&delNum="+ tmp.getId() + ">删除</a></td></tr>");
 					}
 				}

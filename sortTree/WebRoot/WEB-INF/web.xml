@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<web-app>
+<display-name>the directory tree for infinity sort</display-name>
+<description>the directory tree for infinity sort</description>
+
+<servlet>
+  <servlet-name>MySort</servlet-name>
+  <servlet-class>tree.MySort</servlet-class>
+</servlet>
+
+<servlet-mapping>
+   <servlet-name>MySort</servlet-name>
+   <url-pattern>/menu</url-pattern>
+</servlet-mapping>
+
+</web-app>

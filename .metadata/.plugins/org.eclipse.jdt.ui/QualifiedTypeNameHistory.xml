@@ -18,7 +18,6 @@
 <fullyQualifiedTypeName name="java.util.HashSet"/>
 <fullyQualifiedTypeName name="javax.servlet.ServletContext"/>
 <fullyQualifiedTypeName name="jdk.management.resource.internal.inst.SimpleAsynchronousFileChannelImplRMHooks"/>
-<fullyQualifiedTypeName name="org.apache.catalina.connector.Request"/>
 <fullyQualifiedTypeName name="com.exercise.java.UserInfo"/>
 <fullyQualifiedTypeName name="java.text.SimpleDateFormat"/>
 <fullyQualifiedTypeName name="java.util.Date"/>
@@ -46,12 +45,15 @@
 <fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="java.sql.ResultSet"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
-<fullyQualifiedTypeName name="com.study.mvc.model.javabean.StudentInfo"/>
 <fullyQualifiedTypeName name="com.study.mvc.tools.DBUtil"/>
 <fullyQualifiedTypeName name="com.study.mvc.model.dao.StudentDAOImp"/>
 <fullyQualifiedTypeName name="com.study.mvc.model.dao.IStudentDAO"/>
 <fullyQualifiedTypeName name="java.util.HashMap"/>
 <fullyQualifiedTypeName name="com.study.mvc.model.service.IStudentService"/>
 <fullyQualifiedTypeName name="com.study.mvc.model.service.StudentServiceImp"/>
+<fullyQualifiedTypeName name="com.study.mvc.model.javabean.StudentInfo"/>
+<fullyQualifiedTypeName name="org.apache.catalina.connector.Request"/>
+<fullyQualifiedTypeName name="java.lang.InternalError"/>
 <fullyQualifiedTypeName name="java.lang.Integer"/>
+<fullyQualifiedTypeName name="javax.servlet.jsp.PageContext"/>
 </qualifiedTypeNameHistroy>

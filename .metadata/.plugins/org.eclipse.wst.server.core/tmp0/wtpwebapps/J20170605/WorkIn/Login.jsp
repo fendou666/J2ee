@@ -46,7 +46,7 @@
 						<input type="reset" value="重置"  >
 						<button onclick="" >注册</button>
 					</td>
-				</tr>				
+				</tr>
 			</table>
 		</form>	
 	</div>
