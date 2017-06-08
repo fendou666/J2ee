@@ -11,7 +11,7 @@ public class UserAceessANW {
 	
 	}
 	public UserAceessANW(int eec_id, String answer1, String answer2) {
-		eec_id = eec_id;
+		this.eec_id = eec_id;
 		this.answer1 = answer1;
 		this.answer2 = answer2;
 	}

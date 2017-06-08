@@ -24,6 +24,7 @@ public class DAOUserAccessANWImp implements IDAOUserAccessANW {
 				+ "(SELECT QSTVerify_id FROM EECUSER WHERE eec_id=?)";
 		ArrayList objList = new ArrayList();
 		objList.add(UA.getEec_id());
+		System.out.println("找回密码的学号是" + UA.getEec_id());
 		ResultSet rs = DBUtil.getJDBC().queryDate(sql, objList);
 		if(DBUtil.getJDBC().getErrInfo()==null){
 			if(rs!=null){

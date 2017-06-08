@@ -70,9 +70,11 @@ public class DBUtil {
 		}
 		try {
 			PreparedStatement ps = conn.prepareStatement(sql);
-			for(int i=1; i<objList.size();i++){
-				ps.setObject(i, objList.get(i));
+			for(int i=0; i<objList.size();i++){
+				ps.setObject(i+1, objList.get(i));
+				System.out.println("i对象为" + objList.get(i));
 			}
+			System.out.println("sql执行语句为:" + sql);
 			rs = ps.executeQuery();
 		} catch (SQLException e1) {
 			errInfo = "查询sql执行失败";

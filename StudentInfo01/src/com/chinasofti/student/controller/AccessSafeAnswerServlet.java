@@ -46,13 +46,17 @@ public class AccessSafeAnswerServlet extends HttpServlet {
 			//request.getRequestDispatcher("accessSafeAnswer.jsp").forward(request, response);
 		}else{
 			try{
+				System.out.println("parseInt前ID" + eecIdStr);
 				int eecId = Integer.parseInt(eecIdStr);
+				System.out.println("parseInt后ID" + eecId);
 				UA = new UserAceessANW(eecId, answer1, answer2);
+				System.out.println("javabean 中的id" + UA.getEec_id());
 				if(accessService.accessAnswer(UA, answer3)){
 					ret = 0;
 				}else{
 					ret = 1;
 				}
+				System.out.println("ret 为" + ret);
 			}catch(Exception e){
 				ret = 1;
 			}
