@@ -25,3 +25,8 @@
 0:0:0:0:0:0:0:1 - - [09/Jun/2017:07:08:44 +0800] "GET /StudentInfo01/accessSafeAnswer.jsp HTTP/1.1" 200 4166
 0:0:0:0:0:0:0:1 - - [09/Jun/2017:07:08:53 +0800] "POST /StudentInfo01/AccessSafeAnswerServlet HTTP/1.1" 404 1009
 127.0.0.1 - - [09/Jun/2017:07:12:03 +0800] "GET / HTTP/1.1" 404 957
+127.0.0.1 - - [09/Jun/2017:07:13:42 +0800] "GET / HTTP/1.1" 404 957
+0:0:0:0:0:0:0:1 - - [09/Jun/2017:07:13:43 +0800] "GET /StudentInfo01/accessSafeAnswer.jsp HTTP/1.1" 200 4166
+0:0:0:0:0:0:0:1 - - [09/Jun/2017:07:13:43 +0800] "GET /StudentInfo01/js/cookie.js HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [09/Jun/2017:07:13:43 +0800] "GET /favicon.ico HTTP/1.1" 404 979
+0:0:0:0:0:0:0:1 - - [09/Jun/2017:07:13:51 +0800] "POST /StudentInfo01/AccessSafeAnswerServlet HTTP/1.1" 200 279

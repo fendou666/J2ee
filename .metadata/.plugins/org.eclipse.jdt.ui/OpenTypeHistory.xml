@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <typeInfoHistroy>
-<typeInfo handle="=J20170524/D:\/java\/jdk1.8\/jre\/lib\/rt.jar&lt;java.util.logging(Filter.class[Filter" modifiers="1537" timestamp="1491991718320"/>
+<typeInfo handle="=J20170524/D:\/java\/jdk1.8\/jre\/lib\/rt.jar&lt;java.util.logging(Filter.class[Filter" modifiers="1537" timestamp="1492003538267"/>
 <typeInfo handle="=J20170524/D:\/java\/Tomcat8.0\/lib\/servlet-api.jar&lt;javax.servlet(Filter.class[Filter" modifiers="1537" timestamp="1375388114000"/>
 <typeInfo handle="=J20170518/D:\/java\/Tomcat8.0\/lib\/servlet-api.jar&lt;javax.servlet.http(HttpServlet.class[HttpServlet" modifiers="1057" timestamp="1375388114000"/>
-<typeInfo handle="=J20170602/src&lt;com.study.mvc.model.service{ILoginService.java[ILoginService" modifiers="513" timestamp="1496620243262"/>
-<typeInfo handle="=J20170602/src&lt;com.study.mvc.model.dao{ILoginDAO.java[ILoginDAO" modifiers="513" timestamp="1496620243262"/>
-<typeInfo handle="=J20170605/src&lt;com.study.mvc.model.service{IStudentService.java[IStudentService" modifiers="513" timestamp="1496651318886"/>
+<typeInfo handle="=J20170602/src&lt;com.study.mvc.model.service{ILoginService.java[ILoginService" modifiers="513" timestamp="1496491022893"/>
+<typeInfo handle="=J20170602/src&lt;com.study.mvc.model.dao{ILoginDAO.java[ILoginDAO" modifiers="513" timestamp="1496490981557"/>
+<typeInfo handle="=J20170605/src&lt;com.study.mvc.model.service{IStudentService.java[IStudentService" modifiers="513" timestamp="1496962152687"/>
 <typeInfo handle="=J20170605/D:\/java\/Tomcat8.0\/lib\/catalina-storeconfig.jar&lt;org.apache.catalina.storeconfig(IStoreConfig.class[IStoreConfig" modifiers="1537" timestamp="1375388112000"/>
-<typeInfo handle="=J20170605/src&lt;com.study.mvc.model.dao{IStudentDAO.java[IStudentDAO" modifiers="513" timestamp="1496653862841"/>
+<typeInfo handle="=J20170605/src&lt;com.study.mvc.model.dao{IStudentDAO.java[IStudentDAO" modifiers="513" timestamp="1496962152685"/>
 <typeInfo handle="=J20170606JSTL/D:\/java\/Tomcat8.0\/lib\/jsp-api.jar&lt;javax.servlet.jsp.tagext(TagSupport.class[TagSupport" modifiers="33" timestamp="1375388114000"/>
-<typeInfo handle="=StudentInfo01/src&lt;com.chinasofti.student.model.dao{IDAOUserAccessANW.java[IDAOUserAccessANW" modifiers="513" timestamp="1496919537477"/>
+<typeInfo handle="=StudentInfo01/src&lt;com.chinasofti.student.model.dao{IDAOUserAccessANW.java[IDAOUserAccessANW" modifiers="513" timestamp="1496962153325"/>
 </typeInfoHistroy>
