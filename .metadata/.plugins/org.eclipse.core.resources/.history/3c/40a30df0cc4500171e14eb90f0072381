@@ -1,7 +1,0 @@
-package com.study.jspJava;
-
-public class UserInfo {
-	private String name;
-	private int id;
-	
-}

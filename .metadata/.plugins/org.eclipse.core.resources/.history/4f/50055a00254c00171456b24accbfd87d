@@ -1,0 +1,23 @@
+package com.chinasofti.student.javabean;
+
+import java.util.Date;
+
+public class UserInfo {
+	//String EEC_Id;
+	private int eecName;
+	private String nickName;
+	private String pwd;
+	private String sex;
+	private Date dateOfBirth;
+	private int age;
+	private String constellatory;
+	private int managerId;
+	
+	//EEC_Name	NickName	Password	Sex	DateOfBirth	Age	Constellatory	Manager_id	Group_Id	Role_id	Class_id	telephone	email	RegistrationDate	LastLoginTime
+	public static void main(String[] args) {
+		System.out.println(Integer.MAX_VALUE);
+		System.out.println(Long.MAX_VALUE);
+		
+		
+	}
+}

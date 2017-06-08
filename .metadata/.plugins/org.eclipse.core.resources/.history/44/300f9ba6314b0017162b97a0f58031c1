@@ -1,0 +1,148 @@
+package com.study.mvc.model.dao;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+
+import com.study.mvc.model.javabean.StudentInfo;
+import com.study.mvc.tools.DBUtil;
+
+public class StudentDAOImp implements IStudentDAO {
+
+	@Override
+	public HashMap getStudentById(int id) {
+		HashMap<String, StudentInfo> stuMp = null;
+		StudentInfo stu = null;
+		String sql = "SELECT id, stuNum, name, sex, age, gradeFrom FROM studentInfoA WHERE id=" + id;
+		ResultSet rs = DBUtil.queryData(sql);
+		if(rs!=null){
+			try {
+				if(rs.next()){
+					stuMp = new HashMap<String, StudentInfo>();
+					stu = new StudentInfo(
+							Integer.parseInt(rs.getString("id")),
+							Integer.parseInt(rs.getString("stuNum")),
+							rs.getString("name"),
+							rs.getString("sex"),
+							Integer.parseInt(rs.getString("age")),
+							rs.getString("gradeFrom"));
+				}
+				stuMp.put("stu", stu);
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return stuMp;
+	}
+	
+	@Override
+	public HashMap getStudentByNum(int num) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public HashMap getStudentByName(String name) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public HashMap getStudentBySex(String sex) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public HashMap getStudentByAge(int start, int end) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public HashMap getStudentBySchool(String schoolName) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public HashMap getStudentByCondition(int num, String name,
+			String sex, int start, int end, String schoolName) {
+//			String sql = "SELECT id, stuNum, name, sex, age, gradeFrom FROM studentInfoA WHERE "
+//					+ "id = " + num
+//					+ " AND name = " + name
+//					+ " AND name = " + name
+//					+ " AND name = " + name
+//					+ " AND name = " + name
+//					;
+		HashMap<String, List<StudentInfo>> stuMp = null;
+		List<StudentInfo> stuList = null;
+		String sql = "SELECT id, stuNum, name, sex, age, gradeFrom FROM studentInfoA ORDER BY id";
+		ResultSet rs = DBUtil.queryData(sql);
+		if(rs!=null){
+			try {
+				stuMp = new HashMap<String, List<StudentInfo>>();
+				stuList = new ArrayList<StudentInfo>();
+				while(rs.next()){
+					// TODO为什么报错
+					/*if(rs.first()){
+						System.out.println("rs first");
+					}*/
+					//System.out.println("id 为 "  + rs.getString("id"));
+					stuList.add(new StudentInfo(
+							Integer.parseInt(rs.getString("id")),
+							Integer.parseInt(rs.getString("stuNum")),
+							rs.getString("name"),
+							rs.getString("sex"),
+							Integer.parseInt(rs.getString("age")),
+							rs.getString("gradeFrom")));
+				}
+				stuMp.put("stuList", stuList);
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return stuMp;
+	}
+
+	@Override
+	public boolean insertStudentInfo(StudentInfo stu) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean deleteStudentInfo(int num) {
+		String sql = "DELETE FROM studentInfoA  WHERE id=" + num;
+		System.out.println("删除sql为" +sql);
+		int changeCount = DBUtil.changeData(sql);
+		if(changeCount==0){
+			return false;
+		}else{
+			return true;
+		}
+	}
+
+	@Override
+	public boolean saveStudentInfo(StudentInfo stu) {
+		String sql = "UPDATE studentInfoA SET "
+				+ " stuNum=" + stu.getNum()
+				+ ", name='" + stu.getName()
+				+ "', sex='" + stu.getSex()
+				+ "', age=" + stu.getAge()
+				+ ", gradeFrom='" + stu.getSchool()
+				+ "' WHERE id=" + stu.getId();
+		System.out.println("更新sql语句是" + sql);
+		int changeCount = DBUtil.changeData(sql);
+		if(changeCount==0){
+			return false;
+		}else{
+			return true;
+		}
+	}
+
+	
+
+}

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core"  prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -50,17 +51,11 @@
 			</table>
 		</form>	
 	</div>
-	<% 
-		String errMsg = (String)session.getAttribute("errInfo");
-		if(errMsg!=null){
-	%>
-			<div>
-				<p style="color:red"><%=errMsg %></p>
-			</div>
-			
-	<%
-			session.removeAttribute("errInfo");
-		}
-	%>
+	<c:if test="${not empty  sessionScope.errInfo}">
+		<div>
+			<p style="color:red">${sessionScope.errInfo }</p>
+		</div>
+		<c:remove var="errInfo" scope="session"/>
+	</c:if>
 </body>
 </html>

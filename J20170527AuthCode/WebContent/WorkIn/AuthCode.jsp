@@ -20,7 +20,6 @@
 		}else{
 			xmlHttp = new XMLHttpRequest();
 		}
-		
 		xmlHttp.onreadystatechange = function(){
 			if(xmlHttp.readyState==4 && xmlHttp.status==200){
 				// 返回值0代表验证不通过，1代表通过

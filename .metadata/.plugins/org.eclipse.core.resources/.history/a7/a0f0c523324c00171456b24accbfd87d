@@ -1,0 +1,5 @@
+package com.chinasofti.student.model.service;
+
+public class IAccessSafeANS {
+	public boolean accessAnswer(UserAceessANW UA, String answer3);
+}

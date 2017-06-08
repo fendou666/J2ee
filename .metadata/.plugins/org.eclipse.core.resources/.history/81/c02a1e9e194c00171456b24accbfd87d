@@ -1,0 +1,243 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html >
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>留言板</title>
+	</head>
+	<script type="text/javascript">
+		var msgList = [
+			{
+				title:'111',
+				headImg: 'img/1.jpg',
+				name:'小明',
+				content:'我是留言1',
+				time: '2017-06-07 8:00'
+			},
+			{
+				title:'111',
+				name:'小红',
+				headImg: 'img/2.jpg',
+				content:'我是留言2',
+				time: '2017-06-07 8:11'
+			},
+			{
+				title:'111',
+				name:'小强',
+				headImg: 'img/3.jpg',
+				content:'我是留言2',
+				time: '2017-06-07 8:22'
+			},
+			{
+				title:'111',
+				name:'小芳',
+				headImg: 'img/4.jpg',
+				content:'我是留言3',
+				time: '2017-06-07 8:33'
+			}
+		]
+		var idAll = {
+				imgId:[];
+				nameId:[];
+				floorId:[];
+				contenId:[];
+				timeId:[];
+		}
+		
+		var ls = {};
+		ls.$ = function(id){
+			return document.getElementById(id);
+		}
+		ls.forLength = msgList.length>10?10:msgList.length;
+		ls.initImgInfo = function(){
+			var imgId = "img_0";
+			for(var i=1; i<=ls.forLength;i++){
+				imgId = imgId + i;
+				if(i>9){
+					imgId = "img_" + i;
+				}
+				if(ls.$(imgId)==null || ls.$(imgId) == ""){
+					return;
+				}
+				ls.$(imgId).src = msgList[i-1].headImg;
+			}
+		}
+		ls.initNameInfo = function(){
+			var nameId = "name_0";
+			for(var i=1; i<=ls.forLength;i++){
+				nameId = nameId + i;
+				if(i>9){
+					nameId = "name_" + i;
+				}
+				if(ls.$(nameId)==null || ls.$(nameId) == ""){
+					return;
+				}
+				ls.$(nameId).innerText = msgList[i-1].name;
+			}
+		}
+		ls.initFloorInfo = function(){
+			var floorId = "floor_0";
+			for(var i=1; i<=ls.forLength;i++){
+				floorId = floorId + i;
+				if(i>9){
+					floorId = "floor_" + i;
+				}
+				if(ls.$(floorId)==null || ls.$(floorId) == ""){
+					return;
+				}
+				ls.$(floorId).innerText = '第'+i+'楼';
+			}
+		}
+		
+		ls.initContentInfo = function(){
+			var contentId = "content_0";
+			for(var i=1; i<=ls.forLength;i++){
+				contentId = contentId + i;
+				if(i>9){
+					contentId = "content_" + i;
+				}
+				if(ls.$(contentId)==null || ls.$(contentId) == ""){
+					return;
+				}
+				ls.$(contentId).innerText = msgList[i-1].content;
+			}
+		}
+		
+		ls.initTimeInfo = function(){
+			var timeId = "time_0";
+			for(var i=1; i<=ls.forLength;i++){
+				timeId = timeId + i;
+				if(i>9){
+					timeId = "time_" + i;
+				}
+				if(ls.$(timeId)==null || ls.$(timeId) == ""){
+					return;
+				}
+				ls.$(timeId).innerText = msgList[i-1].time;
+			}
+		}
+		
+		ls.initInfo = function(){
+			ls.initImgInfo();
+			ls.initNameInfo();
+			ls.initFloorInfo();
+			ls.initContentInfo();
+			ls.initTimeInfo();
+		}
+		function testShow(elmt){
+			elmt.style.display="block";
+		}
+		function testHide(elmt){
+			elmt.style.display="none";
+		}
+		function showAllMsg(){
+			for(var i=0; i<msgList.length;i++){
+				console.log("name为:" + msgList[i].name);
+			}
+		}
+		function deltInfo(id){
+			var num =  id.indexOf('msgMain_');
+			console.log("num为" + num);
+			if(num!=-1){
+				var msgIndex = parseInt(id.substring(num+'msgMain_'.length, id.length));
+				if(msgList[msgIndex-1]){
+					msgList.splice(msgIndex,1);
+				}
+				showAllMsg();
+				ls.$(id).style.display="none";
+			}
+			return false;
+		}
+		function changeContent(sourceContentId, editeDivId, editeContentId){
+			var value = ls.$(sourceContentId).innerText;
+			ls.$(editeContentId).value = value;
+			ls.$(editeDivId).style.display = 'block';
+			ls.$(sourceContentId).style.display = 'none';
+		}
+		function submitValue(sourceContentId, editeDivId, editeContentId){
+			var value = ls.$(editeContentId).value;
+			ls.$(sourceContentId).innerText = value;
+			ls.$(sourceContentId).style.display = 'block';
+			ls.$(editeDivId).style.display = 'none';
+			return false;
+		}
+	
+	</script>
+	<link rel="stylesheet" type="text/css" href="css/content.css"/>
+	<body onload="ls.initInfo()">
+		<div id="show">
+			<div class="c2" id="msgMain_01">
+				<hr style="width: 1000px; height: 1px; background-color: grey; border:0px">
+				<div class="imgd">
+					<img id="img_01" alt="headImg" width="100px" height="100px" />
+				</div>
+				<div class="content">
+					<p>
+						<span class="name" id="name_01"></span>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<span class="time" id="floor_01" ></span>
+					</p>
+					<div class="option">
+						<ul style="list-style-type: none; ">
+							<li  onmouseleave="testHide(ls.$('hide1'))" onmouseover="testShow(ls.$('hide1'))">
+								<a href="" >▼</a>
+								<ul id="hide1" style="display: none;text-align:center;list-style-type: none; margin-left: -60px;border: 1px solid;">
+									<li><a  onclick="return deltInfo('msgMain_01')">删除</a></li>
+									<li><a  onclick="return changeContent('content_01', 'editeDiv_01', 'editContent_01')">更改</a></li>
+								</ul>
+							</li>
+						</ul>	
+					</div>
+					<div class="edit" id="editeDiv_01">
+						<form action="" method="post">
+							<textarea id="editContent_01" name="" rows="10" cols="75">
+								
+							</textarea>
+							<p>
+								<input type="submit" value="确认"  onclick="return submitValue('content_01', 'editeDiv_01', 'editContent_01')" />
+								<input type="reset" value="取消" />
+							</p>
+						</form>
+					</div>
+					<div class="innerContern" id="content_01">
+						
+					</div>
+					<p class="time" id="time_01"></p>
+				</div>
+			</div>
+			
+			
+			<div class="c2">
+				<hr style="width: 1000px; height: 1px; background-color: grey; border:0px">
+				<div class="imgd">
+					<img src="img/1.jpg" width="100px" height="100px" />
+				</div>
+				<div class="content">
+					<p>
+						<span class="name">姓名</span>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<span class="time">200楼</span>
+					</p>
+					<div class="option">
+						<ul style="list-style-type: none; ">
+							<li id="hidec" onmouseleave="testHide()" onmouseover="testShow()">
+								<a href="" >▼</a>
+								<ul id="hide1" style="display: none;text-align:center;list-style-type: none; margin-left: -60px;border: 1px solid;">
+									<li><a href="">删除</a></li>
+									<li><a href="">更改</a></li>
+								</ul>
+							</li>
+						</ul>	
+					</div>
+					<div class="innerContern">
+						adsf<br>
+						asdfads<br>
+					</div>
+					<p class="time">2017-06-07 08:33</p>
+				</div>
+				<hr style="width: 1000px; height: 3px; background-color: gainsboro; border:0px">
+			</div>
+		</div>
+	</body>
+</html>

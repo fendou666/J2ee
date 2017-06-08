@@ -47,14 +47,15 @@ public class OracleOperationServlet extends HttpServlet {
 			if(id==null){
 				out.write("没有获取到部分参数");
 			}else{
+				System.out.println("id:["+id+"]");
 				StudentInfo stu = studentService.getStudentById(Integer.parseInt(id));
 				// 这里请求sql获取学生信息
 				request.setAttribute("stu", stu);
+				System.out.println("要更新的信息是" + stu);
 				request.getRequestDispatcher("WorkIn/UpdateInfo.jsp").forward(request, response);
 			}
 		}
 		if(action.equals("cg")){
-			out.write("请求删除servlet成功");
 			String id = request.getParameter("id");
 			String num = request.getParameter("num");
 			String name = request.getParameter("name");
@@ -66,7 +67,10 @@ public class OracleOperationServlet extends HttpServlet {
 			}else{
 				StudentInfo stu = new StudentInfo(Integer.parseInt(id), Integer.parseInt(num), name, 
 												sex, Integer.parseInt(age), school);
-				studentService.saveStudentInfo(stu);
+				boolean save = studentService.saveStudentInfo(stu);
+				if(!save){
+					request.setAttribute("msg", "未能更新成功");
+				}
 				// 这里请求sql获取学生信息
 				List<StudentInfo> stuList = studentService.getStudentByCondition(11, "", "", 20, 21, "");
 				Iterator<StudentInfo> iterator = stuList.iterator();

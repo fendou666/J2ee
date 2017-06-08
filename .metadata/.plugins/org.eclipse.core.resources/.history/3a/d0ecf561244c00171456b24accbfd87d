@@ -1,0 +1,12 @@
+package com.chinasofti.student.javabean;
+
+public class UserInfo {
+	//String EEC_Id;
+	int EEC_Id;
+	
+	//EEC_Name	NickName	Password	Sex	DateOfBirth	Age	Constellatory	Manager_id	Group_Id	Role_id	Class_id	telephone	email	RegistrationDate	LastLoginTime
+	public static void main(String[] args) {
+		System.out.println(Integer.MAX_VALUE);
+		
+	}
+}

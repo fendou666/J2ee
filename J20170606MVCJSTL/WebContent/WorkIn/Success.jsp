@@ -35,11 +35,12 @@
 		用户名:<c:out value="${sessionScope.stu.name }"></c:out>
 	</c:if>
 	<c:if test="${not empty sessionScope.msg}">
-		<c:out value="${sessionScope.msg}"></c:out>
+		<div style="color:red">${sessionScope.msg}</div>
 		<jsp:forward page="Login.jsp"></jsp:forward>	
 	</c:if>
 	<c:if test="${not empty requestScope.msg}">
-		<c:out value="${requestScope.msg}"></c:out>
+		<div style="color:red">${requestScope.msg}</div>
+		<c:remove var="msg" scope="request"/>
 	</c:if>
 	
 	<div>
@@ -67,8 +68,8 @@
 						<td>${tmp.sex}</td>
 						<td>${tmp.age}</td>
 						<td>${tmp.school}</td>
-						<td><a href="+ request.getContextPath() + "/OracleOperationServlet?action=seachById&id="+ tmp.getId() + ">修改</a></td>
-						<td><a href="+ request.getContextPath() + "/OracleOperationServlet?action=del&delNum="+ tmp.getId() + ">删除</a></td>
+						<td><a href="<%=request.getContextPath() %>/OracleOperationServlet?action=seachById&id=${tmp.id}">修改</a></td>
+						<td><a href="<%=request.getContextPath() %>/OracleOperationServlet?action=del&delNum=${tmp.id}">删除</a></td>
 					</tr>
 				</c:forEach>
 			</c:if>

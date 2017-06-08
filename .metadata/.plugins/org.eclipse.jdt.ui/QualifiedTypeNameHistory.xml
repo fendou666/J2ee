@@ -1,11 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="com.chinasofti.study.JdbdStore"/>
-<fullyQualifiedTypeName name="org.apache.catalina.User"/>
-<fullyQualifiedTypeName name="javax.xml.ws.Response"/>
-<fullyQualifiedTypeName name="com.sun.glass.ui.Application"/>
-<fullyQualifiedTypeName name="com.chinasofti.study.Message"/>
-<fullyQualifiedTypeName name="com.chinasofti.study.UserInfo"/>
 <fullyQualifiedTypeName name="javax.servlet.http.Cookie"/>
 <fullyQualifiedTypeName name="java.net.URLEncoder"/>
 <fullyQualifiedTypeName name="javax.servlet.Filter"/>
@@ -20,7 +14,6 @@
 <fullyQualifiedTypeName name="jdk.management.resource.internal.inst.SimpleAsynchronousFileChannelImplRMHooks"/>
 <fullyQualifiedTypeName name="com.exercise.java.UserInfo"/>
 <fullyQualifiedTypeName name="java.text.SimpleDateFormat"/>
-<fullyQualifiedTypeName name="java.util.Date"/>
 <fullyQualifiedTypeName name="java.awt.image.BufferedImage"/>
 <fullyQualifiedTypeName name="java.awt.Font"/>
 <fullyQualifiedTypeName name="java.util.Random"/>
@@ -34,17 +27,10 @@
 <fullyQualifiedTypeName name="javax.servlet.annotation.WebServlet"/>
 <fullyQualifiedTypeName name="com.study.mvc.model.dao.ILoginDAO"/>
 <fullyQualifiedTypeName name="com.study.mvc.model.dao.LoginDAOImp"/>
-<fullyQualifiedTypeName name="java.util.Properties"/>
-<fullyQualifiedTypeName name="java.sql.Connection"/>
-<fullyQualifiedTypeName name="java.sql.DriverManager"/>
 <fullyQualifiedTypeName name="com.study.mvc.model.service.ILoginService"/>
 <fullyQualifiedTypeName name="com.study.mvc.model.service.LoginServiceImp"/>
 <fullyQualifiedTypeName name="com.sun.xml.internal.ws.resources.HttpserverMessages"/>
-<fullyQualifiedTypeName name="javax.servlet.http.HttpServletRequest"/>
-<fullyQualifiedTypeName name="javax.servlet.http.HttpServletResponse"/>
 <fullyQualifiedTypeName name="java.util.List"/>
-<fullyQualifiedTypeName name="java.sql.ResultSet"/>
-<fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="com.study.mvc.tools.DBUtil"/>
 <fullyQualifiedTypeName name="com.study.mvc.model.dao.StudentDAOImp"/>
 <fullyQualifiedTypeName name="com.study.mvc.model.dao.IStudentDAO"/>
@@ -54,6 +40,24 @@
 <fullyQualifiedTypeName name="com.study.mvc.model.javabean.StudentInfo"/>
 <fullyQualifiedTypeName name="org.apache.catalina.connector.Request"/>
 <fullyQualifiedTypeName name="java.lang.InternalError"/>
-<fullyQualifiedTypeName name="java.lang.Integer"/>
 <fullyQualifiedTypeName name="javax.servlet.jsp.PageContext"/>
+<fullyQualifiedTypeName name="javax.servlet.http.HttpServletRequest"/>
+<fullyQualifiedTypeName name="javax.servlet.http.HttpServletResponse"/>
+<fullyQualifiedTypeName name="java.lang.Long"/>
+<fullyQualifiedTypeName name="java.util.Date"/>
+<fullyQualifiedTypeName name="java.lang.Integer"/>
+<fullyQualifiedTypeName name="java.lang.Exception"/>
+<fullyQualifiedTypeName name="com.chinasofti.student.javabean.UserAceessANW"/>
+<fullyQualifiedTypeName name="com.chinasofti.student.model.service.IAccessSafeANS"/>
+<fullyQualifiedTypeName name="com.chinasofti.student.model.dao.IDAOUserAccessANW"/>
+<fullyQualifiedTypeName name="com.chinasofti.student.model.dao.DAOUserAccessANWImp"/>
+<fullyQualifiedTypeName name="java.sql.Connection"/>
+<fullyQualifiedTypeName name="java.util.Properties"/>
+<fullyQualifiedTypeName name="java.sql.DriverManager"/>
+<fullyQualifiedTypeName name="java.sql.ResultSet"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="sun.security.pkcs11.Secmod.DbMode"/>
+<fullyQualifiedTypeName name="com.chinasofti.student.tools.jdbc.DBUtil"/>
+<fullyQualifiedTypeName name="com.chinasofti.student.model.service.ISVCAccessSafeANS"/>
+<fullyQualifiedTypeName name="com.chinasofti.student.model.service.UserAccessANWImp"/>
 </qualifiedTypeNameHistroy>

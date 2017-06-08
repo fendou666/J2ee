@@ -1,0 +1,38 @@
+package com.chinasofti.student.controller;
+
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * Servlet implementation class AccessSafeAnswerServlet
+ */
+@WebServlet("/AccessSafeAnswerServlet")
+public class AccessSafeAnswerServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    public AccessSafeAnswerServlet() {
+    }
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String eecIdStr = request.getParameter("eecId");
+		String answer1 = request.getParameter("answer1");
+		String answer2 = request.getParameter("answer2");
+		String answer3 = request.getParameter("answer3");
+		if(eecIdStr==null || eecIdStr=="" ||
+			answer1==null || answer1=="" ||
+			answer2==null || answer1=="" ||
+			answer3==null || answer1==""
+				){
+			
+		}
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		doGet(request, response);
+	}
+
+}
