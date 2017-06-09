@@ -1,0 +1,39 @@
+package com.chinasofti.student.javabean;
+
+import java.util.Date;
+
+public class MsgList {
+	private int msgId;
+	private int eecId;
+	private String title;
+	private String msgContent;
+	private Date msgTime;
+	
+	
+	public int getMsgId() {
+		return msgId;
+	}
+	public int getEecId() {
+		return eecId;
+	}
+	public String getTitle() {
+		return title;
+	}
+	public void setTitle(String title) {
+		this.title = title;
+	}
+	public String getMsgContent() {
+		return msgContent;
+	}
+	public void setMsgContent(String msgContent) {
+		this.msgContent = msgContent;
+	}
+	public Date getMsgTime() {
+		return msgTime;
+	}
+	public void setMsgTime(Date msgTime) {
+		this.msgTime = msgTime;
+	}
+	
+	
+}

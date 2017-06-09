@@ -1,0 +1,11 @@
+package com.chinasofti.student.javabean;
+
+import java.util.Date;
+
+	
+	private int msgId;
+	private int eecId;
+	private String title;
+	private String msgContent;
+	private Date msgTime;
+}

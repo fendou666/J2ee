@@ -31,7 +31,6 @@ public class LoginServlet extends HttpServlet {
 		if(!userName.equals("")){
 			System.out.println("用户名是tom");
 			request.getSession().setAttribute("uname", userName);
-			
 			request.getRequestDispatcher("LoginSuccessFilter/Success.jsp").forward(request, response);
 			//response.sendRedirect("LoginSuccessFilter/Success.jsp");
 		}else{

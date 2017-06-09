@@ -1,2 +1,0 @@
-diriver=oracle.jdbc.OracleDriver
-url=jdbc:oracle:thin:@175.3.13.254

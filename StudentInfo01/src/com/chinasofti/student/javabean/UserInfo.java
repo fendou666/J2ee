@@ -19,6 +19,7 @@ public class UserInfo {
 	private int eecId;
 	private int eecName;
 	private String nickName;
+	private String headImg;
 	private String sex;
 	private Date dateOfBirth;
 	private int age;

@@ -69,8 +69,6 @@ E:\1java\J2ee\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\65532169.ind
 \J20170518\src
 E:\1java\J2ee\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3244310385.index
 \J20170523_a\src
-E:\1java\J2ee\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\769801593.index
-\MyFirstDynamicWeb\src
 E:\1java\J2ee\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1876359108.index
 \J20170522\src
 E:\1java\J2ee\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2603836270.index
@@ -81,7 +79,5 @@ E:\1java\J2ee\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3698805914.i
 \J20170524\src
 E:\1java\J2ee\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3589880169.index
 \J20170531JspStudy\src
-E:\1java\J2ee\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1691170702.index
-\StudentInfo01\src
 E:\1java\J2ee\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1848207629.index
 \J20170525new\src
