@@ -27,6 +27,11 @@ body {
 .name {
 	color: dodgerblue;
 }
+.floorMsgsOnly{
+	font-size: small;
+	color: silver;
+}
+
 
 a {
 	text-decoration: none;

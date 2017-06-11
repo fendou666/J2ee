@@ -5,13 +5,16 @@ import java.util.Date;
 public class MsgListNeed {
 	
 	
+	
+
+
 	private int msgId;
 	private int eecId;
 	private String img;
 	private String name;
 	private String title;
 	private String msgContent;
-	private Date msgTime;
+	private String msgTime;
 	
 	public int getMsgId() {
 		return msgId;
@@ -43,17 +46,19 @@ public class MsgListNeed {
 	public void setMsgContent(String msgContent) {
 		this.msgContent = msgContent;
 	}
-	public Date getMsgTime() {
+	
+	public String getMsgTime() {
 		return msgTime;
 	}
-	public void setMsgTime(Date msgTime) {
+	public void setMsgTime(String msgTime) {
 		this.msgTime = msgTime;
 	}
+	
 	public MsgListNeed() {
 		
 	}
 	public MsgListNeed(int msgId, int eecId, String name, String img,
-			String title, String msgContent, Date msgTime) {
+			String title, String msgContent, String msgTime) {
 		this.msgId = msgId;
 		this.eecId = eecId;
 		this.name = name;

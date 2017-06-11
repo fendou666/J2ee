@@ -1,3 +1,4 @@
+<%@page import="com.chinasofti.student.javabean.UserInfo"%>
 <%@page import="com.chinasofti.student.javabean.MsgListNeed"%>
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page import="com.chinasofti.student.javabean.MsgList"%>
@@ -38,34 +39,78 @@
 			ls.$(editeDivId).style.display = 'none';
 			return false;
 		}
+		function ajaxGetMsgInfo(){
+			var xmlHttp;
+			if(window.ActiveXObject){
+				xmlHttp = new ActiveXObject("Msxml2.XMLHTTP");
+			}else{
+				xmlHttp = new XMLHttpRequest();
+			}
+			xmlHttp.onreadystatechange = function(){
+				if(xmlHttp.readyState==4 && xmlHttp.status==200){
+						
+				}
+			}
+			xmlHttp.open("POST", "");
+			xmlHttp.send(null);
+		}
 	</script>
 	<link rel="stylesheet" type="text/css" href="css/content.css"/>
 	<body>
+	
+		<%
+			UserInfo u = new UserInfo();
+			u.setEecId(170000001);
+			session.setAttribute("u", u);
+		%>
+		
 		<%
 			ArrayList<MsgListNeed> msgList = new ArrayList<MsgListNeed>();
-			
+			;
 			msgList.add(new MsgListNeed(1, 170000002, "老师1", "01.jpg",
-					"标题1", "对于你，我始终只能以陌生人的身份去怀念", new Date()));
+					"标题1", "对于你，我始终只能以陌生人的身份去怀念", 
+					new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date())
+					));
 			msgList.add(new MsgListNeed(2, 170000003, "老师2", "02.jpg",
-					"标题1", "对于你，我始终只能以陌生人的身份去怀念", new Date()));
+					"标题1", "对于你，我始终只能以陌生人的身份去怀念", 
+					new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date())
+					));
 			msgList.add(new MsgListNeed(3, 170000004, "老师3", "03.jpg",
-					"标题1", "对于你，我始终只能以陌生人的身份去怀念", new Date()));
+					"标题1", "对于你，我始终只能以陌生人的身份去怀念", 
+					new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date())
+					));
 			msgList.add(new MsgListNeed(4, 170000001, "老师4", "04.jpg",
-					"标题1", "对于你，我始终只能以陌生人的身份去怀念", new Date()));
+					"标题1", "对于你，我始终只能以陌生人的身份去怀念", 
+					new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date())
+					));
 			msgList.add(new MsgListNeed(5, 170000001, "老师4", "05.jpg",
-					"标题1", "对于你，我始终只能以陌生人的身份去怀念", new Date()));
+					"标题1", "对于你，我始终只能以陌生人的身份去怀念", 
+					new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date())
+					));
 			msgList.add(new MsgListNeed(6, 170000001, "老师4", "06.jpg",
-					"标题1", "对于你，我始终只能以陌生人的身份去怀念", new Date()));
+					"标题1", "对于你，我始终只能以陌生人的身份去怀念", 
+					new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date())
+					));
 			msgList.add(new MsgListNeed(7, 170000001, "老师4", "07.jpg",
-					"标题1", "对于你，我始终只能以陌生人的身份去怀念", new Date()));
+					"标题1", "对于你，我始终只能以陌生人的身份去怀念", 
+					new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date())
+					));
 			msgList.add(new MsgListNeed(8, 170000001, "老师4", "08.jpg",
-					"标题1", "对于你，我始终只能以陌生人的身份去怀念", new Date()));
+					"标题1", "对于你，我始终只能以陌生人的身份去怀念", 
+					new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date())
+					));
 			msgList.add(new MsgListNeed(9, 170000001, "老师4", "09.jpg",
-					"标题1", "对于你，我始终只能以陌生人的身份去怀念", new Date()));
+					"标题1", "对于你，我始终只能以陌生人的身份去怀念", 
+					new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date())
+					));
 			msgList.add(new MsgListNeed(10, 170000001, "老师4", "10.jpg",
-					"标题1", "对于你，我始终只能以陌生人的身份去怀念", new Date()));
+					"标题1", "对于你，我始终只能以陌生人的身份去怀念", 
+					new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date())
+					));
 			msgList.add(new MsgListNeed(11, 170000001, "老师4", "11.jpg",
-					"标题1", "对于你，我始终只能以陌生人的身份去怀念", new Date()));
+					"标题1", "对于你，我始终只能以陌生人的身份去怀念", 
+					new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date())
+					));
 			request.setAttribute("msgList", msgList);
 			request.setAttribute("msgListLength", msgList.size());
 			String indexStr = request.getParameter("index");
@@ -76,7 +121,7 @@
 			}
 			request.setAttribute("msgIndex", index);
 		%>
-	
+		<!-- 待完善功能 1，回复， 收起回复，输入字数量统计  -->
 		<div id="show">
 			
 			<c:forEach var="tmp" items="${requestScope.msgList}" varStatus="iid" begin="${requestScope.msgIndex }" end="${requestScope.msgIndex +9}">
@@ -88,7 +133,9 @@
 					<div class="content">
 						<p>
 							<span class="name" id="name_${iid.index +1}">${tmp.name }</span>
-							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							&nbsp;&nbsp;
+							<span class="floorMsgsOnly">只看该作者</span>
+							&nbsp;&nbsp;
 							<span class="time" id="floor_${iid.index +1}" >第${tmp.msgId }楼</span>
 						</p>
 						<div class="option">
@@ -96,8 +143,15 @@
 								<li  onmouseleave="testHide(ls.$('hide_${iid.index +1}'))" onmouseover="testShow(ls.$('hide_${iid.index +1}'))">
 									<a href="" >▼</a>
 									<ul  class="hide" id="hide_${iid.index +1}" style="display: none;text-align:center;list-style-type: none; margin-left: -60px;border: 1px solid;">
-										<li><a  onclick="return deltInfo('msgMain_${iid.index +1}')">删除</a></li>
-										<li><a  onclick="return changeContent('content_${iid.index +1}', 'editeDiv_${iid.index +1}', 'editContent_${iid.index +1}')">更改</a></li>
+										<c:if test="${sessionScope.u.eecId ==  tmp.eecId}">
+											<li><a  onclick="return deltInfo('msgMain_${iid.index +1}')">删除</a></li>
+											<li><a  onclick="return changeContent('content_${iid.index +1}', 'editeDiv_${iid.index +1}', 'editContent_${iid.index +1}')">更改</a></li>
+										</c:if>
+										<c:if test="${sessionScope.u.eecId !=  tmp.eecId}">
+											<li><a  onclick="return deltInfo('msgMain_${iid.index +1}')">举报</a></li>
+											<li><a  onclick="return deltInfo('msgMain_${iid.index +1}')">隐藏该用户内容3天</a></li>
+										</c:if>
+										
 									</ul>
 								</li>
 							</ul>	
@@ -116,7 +170,10 @@
 						<div class="innerContern" id="content_${iid.index +1}">
 							${tmp.msgContent  }
 						</div>
-						<p class="time" id="time_${iid.index +1}"></p>
+						<p  id="time_${iid.index +1}">
+							<span class="time">${tmp.msgTime }</span>
+							<span><a href="#" onclick="return false;">&nbsp;&nbsp;&nbsp;&nbsp;回复</a></span>
+						</p>
 					</div>
 					
 					<c:if test="${ iid.index == requestScope.msgListLength-1}">
@@ -128,8 +185,11 @@
 					</c:if>
 				</div>
 			</c:forEach>
+			<!-- TODO关于这里应该写成ajax方式还是 超级链接方式，还是get/post哪种方式  -->
+			<!-- 考虑后面方式的结合决定使用ajax方式  -->
 			<c:if test="${requestScope.msgListLength > requestScope.msgIndex +10}">
-				<a href="msg04.jsp?index=${requestScope.msgIndex +10}">下一页</a>
+				<a href="#" onclick="return false, "></a>
+				<%-- <a href="msg04.jsp?index=${requestScope.msgIndex +10}">下一页</a> --%>
 			</c:if>
 		</div>
 		
