@@ -1,0 +1,121 @@
+<%@page import="java.util.Iterator"%>
+<%@page import="java.util.List"%>
+<%@page import="com.study.mvc.model.javabean.StudentInfo"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core"  prefix="c" %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+</head>
+<style type="text/css">
+	div#main {
+		width:800px;
+		position:absolute;
+		top:300px;
+		left: 50%;
+		margin-left:-400px;
+	}
+	table {
+		margin: auto;
+	}
+	div#main table {
+		width: 800px;
+		border: 2px solid blue;
+		border-collapse: collapse;
+	}
+	
+	td {
+		border: 1px solid blue;
+	}
+</style>
+
+<script type="text/javascript" src="../Myjs/jquery-1.7.2.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$("subB").click(function(){
+			$.post(
+				"<%=request.getContextPath()%>/OracleOperationServlet?action=seachByName",
+				{
+					action:"seachByName",
+					stuName:$("stuName").val()
+				},
+				function(data){
+					var htmlData = "返回了";
+					$("dataCg").text=htmlData;
+				},
+				"XML"
+			)
+		})
+	})
+
+</script>
+<body>
+	<%-- <c:if test="${empty sessionScope.stu}">
+		<jsp:forward page="NoLogin.jsp"></jsp:forward>
+	</c:if>	
+	<c:if test="${not empty sessionScope.stu}">
+		<div>用户名：${sessionScope.stu.name}</div>
+	</c:if>	 --%>
+	<div >
+		<form id="seachFm">
+			<table>
+				<tr>
+					<td>姓名</td>
+					<td><input type="text" name="stuName" id="stuName" ></td>
+				</tr>
+				<tr>
+					<td colspan="2" style="text-align:center">
+						<input type="button" value="查找" id="subB">
+						<input type="button" value="重置" onclick="seachFm.reset()" >
+					</td>
+				</tr>
+			</table>
+		</form>
+	</div>
+	<div id="main">
+		<table id="tb">
+			<tr>
+				<td>序号</td>
+				<td>学号</td>
+				<td>姓名</td>
+				<td>性别</td>
+				<td>年龄</td>
+				<td>毕业院校</td>
+				<td colspan="2">操作</td>
+			</tr>
+			<div id="dataCg">
+				<% 
+					List<StudentInfo> stuList = (List<StudentInfo>)session.getAttribute("stuList");
+					if(stuList==null){
+						%>
+						<tr>
+							<td colspan="6">没有获取到信息</td>
+						</tr>
+						<% 
+					}else{
+						Iterator<StudentInfo> iterator = stuList.iterator();
+						StudentInfo tmp = null;
+						while(iterator.hasNext()){
+							tmp = iterator.next();
+								out.write("<tr><td>"+tmp.getId()+"</td>"
+								+"<td>"+tmp.getNum()+"</td>"
+								+ "<td>"+tmp.getName()+"</td>"
+								+ "<td>"+tmp.getSex()+"</td>"
+								+ "<td>"+tmp.getAge()+"</td>"
+								+ "<td>"+tmp.getSchool()+"</td>"
+								// 关于这里能不能考虑将指针传过去， 能不能通过设置一个ID然后将一行参数进行传递
+								+ "<td><a href="+ request.getContextPath() + "/OracleOperationServlet?action=seachById&id="+ tmp.getId() + ">修改</a></td>"
+								+ "<td><a href="+ request.getContextPath() + "/OracleOperationServlet?action=del&delNum="+ tmp.getId() + ">删除</a></td></tr>");
+						}
+					}
+				%>
+			</div>
+			
+			
+		</table>
+	</div>
+</body>
+</html>

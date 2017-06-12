@@ -51,9 +51,41 @@
 						
 				}
 			}
-			xmlHttp.open("POST", "");
+			xmlHttp.open("POST", "MsgServlet?action=page");
 			xmlHttp.send(null);
 		}
+		function ajaxDelMsgInfo(){
+			var xmlHttp;
+			if(window.ActiveXObject){
+				xmlHttp = new ActiveXObject("Msxml2.XMLHTTP");
+			}else{
+				xmlHttp = new XMLHttpRequest();
+			}
+			xmlHttp.onreadystatechange = function(){
+				if(xmlHttp.readyState==4 && xmlHttp.status==200){
+						
+				}
+			}
+			xmlHttp.open("POST", "MsgServlet?action=page");
+			xmlHttp.send(null);
+		}
+		function ajaxDelMsgInfo(){
+			var xmlHttp;
+			if(window.ActiveXObject){
+				xmlHttp = new ActiveXObject("Msxml2.XMLHTTP");
+			}else{
+				xmlHttp = new XMLHttpRequest();
+			}
+			xmlHttp.onreadystatechange = function(){
+				if(xmlHttp.readyState==4 && xmlHttp.status==200){
+						
+				}
+			}
+			xmlHttp.open("POST", "MsgServlet?action=page");
+			xmlHttp.send(null);
+		}
+		
+		
 	</script>
 	<link rel="stylesheet" type="text/css" href="css/content.css"/>
 	<body>
