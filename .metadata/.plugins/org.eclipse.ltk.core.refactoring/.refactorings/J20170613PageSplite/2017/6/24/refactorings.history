@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;UserListJSON.jsp&apos; to &apos;WorkIn&apos;&#x0D;&#x0A;- Original project: &apos;J20170613PageSplite&apos;&#x0D;&#x0A;- Destination element: &apos;WorkIn&apos;&#x0D;&#x0A;- Original element: &apos;UserListJSON.jsp&apos;" description="Copy file" element1="WebContent/WorkIn/UserListJSON.jsp" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1497345694264" target="/J20170613PageSplite/WebContent/WorkIn" units="0" version="1.0"/>
+</session>

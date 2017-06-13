@@ -1,9 +1,0 @@
-package com.study.taglib;
-
-import javax.servlet.jsp.tagext.TagSupport;
-
-public class MyFirstTaglib extends TagSupport {
-
-	private static final long serialVersionUID = 1L;
-	
-}

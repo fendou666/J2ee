@@ -1,0 +1,28 @@
+package com.study.mvc.model.service;
+
+import java.util.List;
+
+import com.study.mvc.model.javabean.SqlDataPage;
+import com.study.mvc.model.javabean.StudentInfo;
+
+public interface IStudentService {
+	// 查询
+	public StudentInfo getStudentById(int id);
+	public StudentInfo getStudentByNum(int num);
+	public List<StudentInfo> getStudentByName(String name);
+	public List<StudentInfo> getStudentByName(String name, SqlDataPage stuPage);
+	public List<StudentInfo> getStudentBySex(String sex);
+	public List<StudentInfo> getStudentByAge(int start, int end);
+	public List<StudentInfo> getStudentBySchool(String schoolName);
+	public List<StudentInfo> getStudentByCondition(int num, String name, String sex, 
+			int start, int end, String schoolName);
+	public List<StudentInfo> getStudentAll();
+	
+	
+	// 增加
+	public boolean insertStudentInfo(StudentInfo stu);
+	// 删除
+	public boolean deleteStudentInfo(int num);
+	// 修改
+	public boolean saveStudentInfo(StudentInfo stu);
+}

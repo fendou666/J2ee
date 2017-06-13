@@ -1,0 +1,35 @@
+package com.study.mvc.model.javabean;
+
+public class sqlFuncObj {
+	
+	
+	private String parmsType;
+	private int paramsIndex;
+	private Object obj;
+	private int sqlType;
+	
+	public String getParmsType() {
+		return parmsType;
+	}
+	public void setParmsType(String parmsType) {
+		this.parmsType = parmsType;
+	}
+	public int getParamsIndex() {
+		return paramsIndex;
+	}
+	public void setParamsIndex(int paramsIndex) {
+		this.paramsIndex = paramsIndex;
+	}
+	public Object getObj() {
+		return obj;
+	}
+	public void setObj(Object obj) {
+		this.obj = obj;
+	}
+	public int getSqlType() {
+		return sqlType;
+	}
+	public void setSqlType(int sqlType) {
+		this.sqlType = sqlType;
+	}
+}
