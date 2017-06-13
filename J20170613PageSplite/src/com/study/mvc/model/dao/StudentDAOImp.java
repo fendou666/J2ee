@@ -12,6 +12,7 @@ import com.study.mvc.model.javabean.SqlDataPage;
 import com.study.mvc.model.javabean.StudentInfo;
 import com.study.mvc.model.javabean.sqlFuncObj;
 import com.study.mvc.tools.DBUtil;
+import com.sun.rowset.JdbcRowSetImpl;
 
 public class StudentDAOImp implements IStudentDAO {
 
@@ -68,9 +69,9 @@ public class StudentDAOImp implements IStudentDAO {
 		HashMap stuMp = null;
 		ArrayList<sqlFuncObj> params = new ArrayList<sqlFuncObj>();
 		String sql = "{? =callgetOnePageStuInfo(?,?,?,?) }";
-		Object aa = new ResultSet();
-		params.add(new sqlFuncObj("out", "1", (new ResultSet()), OracleTypes.CURSOR));
-		
+		Object aa = new JdbcRowSetImpl();
+		params.add(new sqlFuncObj("out", 1, new JdbcRowSetImpl(), OracleTypes.CURSOR));
+		params.add(new sqlFuncObj("out", 1, , OracleTypes.CURSOR));
 	}
 	
 	
