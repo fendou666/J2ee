@@ -14,9 +14,31 @@ public class AdminServiceImp implements IAdminService {
 	}
 	
 	@Override
+	public UserInfo queryDataById(int eecId) {
+		return adminDAO.queryDataById(eecId);
+	}
+	
+	@Override
 	public List<UserInfo> queryDataByCondition(int roleId, int classId,
 			int eecId, String eecName) {
 		return adminDAO.queryDataByCondition(roleId, classId, eecId, eecName);
 	}
+
+	@Override
+	public boolean insertEecuserData(UserInfo u) {
+		return adminDAO.insertEecuserData(u);
+	}
+
+	@Override
+	public boolean deleteEecuserDataById(int id) {
+		return adminDAO..deleteEecuserDataById(id);
+	}
+
+	@Override
+	public boolean updateEecuserData(UserInfo u) {
+		return adminDAO.updateEecuserData(u);
+	}
+
+	
 
 }

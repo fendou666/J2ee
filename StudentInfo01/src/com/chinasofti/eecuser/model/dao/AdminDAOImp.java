@@ -11,6 +11,13 @@ import com.chinasofti.eecuser.tools.jdbc.DBUtil;
 
 public class AdminDAOImp implements IAdminDAO {
 	
+	@Override
+	public UserInfo queryDataById(int eecId) {
+		
+		return null;
+	}
+	
+	
 	// 条件拼接， 如果返回值为""， 确定没有任何数据， 然后sql查询直接返回为null
 //	private String getConditionString(int roleId, int classId,
 //			int eecId, String eecName){
@@ -26,22 +33,23 @@ public class AdminDAOImp implements IAdminDAO {
 	
 	private String getConditionString(int roleId, int classId,
 			int eecId, String eecName,  ArrayList<Object> objList){
-		objList.add(roleId);
-		objList.add(classId);
-		objList.add(eecId);
-		objList.add(eecName);
+		
 		String conditionStr = "";
-		if(roleId!=-1 || roleId!=0){
+		if(roleId!=-1 && roleId!=0){
 			conditionStr += " AND u.role_id=?";
+			objList.add(roleId);
 		}
-		if(classId!=-1 || classId!=0){
+		if(classId!=-1 && classId!=0){
 			conditionStr += " AND u.class_id=?";
+			objList.add(classId);
 		}
 		if(eecId!=-1){
 			conditionStr += " AND u.eec_id=?";
+			objList.add(eecId);
 		}
 		if(eecName != null){
 			conditionStr += " AND u.eec_name=?";
+			objList.add(eecName);
 		}
 		return conditionStr;
 	}
@@ -50,25 +58,28 @@ public class AdminDAOImp implements IAdminDAO {
 	public List<UserInfo> queryDataByCondition(int roleId, int classId,
 			int eecId, String eecName) {
 		ArrayList<Object> objList = new ArrayList<Object>();
+		// TODO  java.sql.SQLException: 对只转发结果集的无效操作: first
 		String conditionStr = getConditionString(roleId, classId, eecId, eecName,  objList);
 		List<UserInfo> userList = null;
 		
 		if(conditionStr.equals("")){
-			return null;
+//			return null; // 默认也需要查找不能返回
 		}
-		// TODO 这里sql语句3004需要整理
+		
 		String sql="select u.class_Id,u.EEC_Id,u.EEC_Name,u.sex,u.age,u.email,u.telephone,r.role_name from eecuser u,eecrole r";
-		sql += "WHERE 1='1' AND u.role_id = r.role_id AND u.role_id >= 3004  AND u.role_id <= 3005";
+		sql += " WHERE 1='1' AND u.role_id = r.role_id AND u.role_id >=3004  AND u.role_id <=3005";
 		sql += conditionStr;
 		System.out.println("执行的sql语句是" + sql);
 		
 		ResultSet rs = DBUtil.getJDBC().queryDate(sql, objList);
 		if(rs!=null){
 			try {
+				userList = new ArrayList<UserInfo>();
 				while(rs.next()){
-					if(rs.first()){
-						userList = new ArrayList<UserInfo>();
-					}
+					// TODO java.sql.SQLException: 对只转发结果集的无效操作: first
+//					if(rs.first()){
+//						userList = new ArrayList<UserInfo>();
+//					}
 					userList.add(new UserInfo(
 							Integer.parseInt(rs.getString("class_Id")),
 							Integer.parseInt(rs.getString("EEC_Id")),
@@ -84,7 +95,30 @@ public class AdminDAOImp implements IAdminDAO {
 				e.printStackTrace();
 			}
 		}
+		if (userList.size() == 0){
+			userList = null;
+		}
 		return userList;  
 	}
+
+	@Override
+	public boolean insertEecuserData(UserInfo u) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean deleteEecuserDataById(int id) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean updateEecuserData(UserInfo u) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	
 
 }

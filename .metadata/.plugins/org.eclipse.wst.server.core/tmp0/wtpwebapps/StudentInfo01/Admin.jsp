@@ -23,6 +23,9 @@
 		console.log("eecId :" + $("#eecId").val());
 		console.log("eecName :" + $("#eecName").val());
 	}
+	function showHtml(id){
+		console.log(document.getElementById(id).innerHTML);
+	}
 	
 	function getEecUserInfo(forward){
 		showInfo();
@@ -36,6 +39,7 @@
 					eecName:$("#eecName").val()
 				},
 				function(data){
+					//console.log("数据解析支持成功");
 					var eecUsers = eval(data);
 					var htmlData = "";
 					htmlData +=	'<tr bgcolor="#8FBC8F">';
@@ -49,7 +53,8 @@
 					}else{
 						
 						$.each(eecUsers ,function(i){
-							htmlData += "<tr>"
+							htmlData += "<tr id=\"usd" + (i+1) + "\">";
+							htmlData += "<td>" + (i+1)  +"</td>";
 							htmlData += "<td>" + eecUsers[i].classId  +"</td>";
 							htmlData += "<td>" + eecUsers[i].id  +"</td>";
 							htmlData += "<td>" + eecUsers[i].name  +"</td>";
@@ -58,14 +63,16 @@
 							htmlData += "<td>" + eecUsers[i].email  +"</td>";
 							htmlData += "<td>" + eecUsers[i].telephone  +"</td>";
 							htmlData += "<td>" + eecUsers[i].roleName  +"</td>";
-							htmlData += "<td><a href=\"<%=request.getContextPath() %>/OracleOperationServlet?action=seachById&id="+ students[i].id +"\">增加</a></td>";
-							htmlData += "<td><a href=\"<%=request.getContextPath() %>/OracleOperationServlet?action=seachById&id="+ students[i].id +"\">修改</a></td>";
-							htmlData += "<td><a href=\"<%=request.getContextPath() %>/OracleOperationServlet?action=del&delNum="+ students[i].id +"\">删除</a></td>";
+							//htmlData += '<td><a href="#" onclick="showHtml(\'usd' +(i+1)+ '\')">增加</a></td>';
+							htmlData += '<td><a href="#" onclick="showHtml(\'t2\')">增加</a></td>';
+							//htmlData += "<td><a href=\"<%=request.getContextPath() %>/OracleOperationServlet?action=seachById&id="+ eecUsers[i].id +"\">增加</a></td>";
+							htmlData += "<td><a href=\"<%=request.getContextPath() %>/OracleOperationServlet?action=seachById&id="+ eecUsers[i].id +"\">修改</a></td>";
+							htmlData += "<td><a href=\"<%=request.getContextPath() %>/OracleOperationServlet?action=del&delNum="+ eecUsers[i].id +"\">删除</a></td>";
 							htmlData += "</tr>";
 						})
 						htmlData +=  '<td colspan="2"><input type="button"  onclick="getStuInfo(\'first\')" value="首页" ></td>';
-						htmlData +=  '<td colspan="1"><input type="button"  onclick="getStuInfo(\'pre\')" value="前页" ></td>';
-						htmlData +=  '<td colspan="1"><input type="button"  onclick="getStuInfo(\'next\')" value="次页" ></td>';
+						htmlData +=  '<td colspan="2"><input type="button"  onclick="getStuInfo(\'pre\')" value="前页" ></td>';
+						htmlData +=  '<td colspan="2"><input type="button"  onclick="getStuInfo(\'next\')" value="次页" ></td>';
 						htmlData +=  '<td colspan="2"><input type="button"  onclick="getStuInfo(\'last\')" value="尾页" ></td>';
 						htmlData +=  '<td colspan="2"><input type="number" id="pageIndex">';
 						htmlData +=  '<input type="button" onclick="getEecUserInfo(getCustomPageIndex())" value="指定页" ></td>';
@@ -190,13 +197,20 @@
 					<td><a href="#">删除</a></td>
 					<td><a href="#">修改</a></td>
 				</tr>
-				<tr>
-					<td></td><td></td><td></td><td></td><td></td>
-					<td></td><td></td><td></td><td></td>
+				<!-- <tr id="usd3">
+					<td>3</td>
+					<td><input type="text" name="usd3classId" id="usd3classId"></td>
+					<td><input type="text" name="usd3id" id="usd3id"></td>
+					<td><input type="text" name="usd3name" id="usd3name"></td>
+					<td><input type="text" name="usd3sex" id="usd3sex"></td>
+					<td><input type="text" name="usd3age" id="usd3age"></td>
+					<td><input type="text" name="usd3email" id="usd3email"></td>
+					<td><input type="text" name="usd3telephone" id="usd3telephone"></td>
+					<td><input type="text" name="usd3roleName" id="usd3roleName"></td>
 					<td><a href="#">添加</a></td>
 					<td><a href="#">删除</a></td>
 					<td><a href="#">修改</a></td>
-				</tr>
+				</tr> -->
 			</table>
 		</div>
 	</div>

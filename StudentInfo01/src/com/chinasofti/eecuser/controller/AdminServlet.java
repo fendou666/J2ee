@@ -50,14 +50,13 @@ public class AdminServlet extends HttpServlet {
     	}
     }
     
-	
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    private void queryDate(HttpServletRequest request, HttpServletResponse response) throws IOException{
 		// 获取页面的参数
 		String roleId 		= 	request.getParameter("roleId");
 		String classId 		= 	request.getParameter("classId");
 		String eecId		=  	request.getParameter("eecId");
 		String eecName 		= 	request.getParameter("eecName");
-		String action 		= 	request.getParameter("action");
+		String action		= 	"";
 		
 		// 其他需要的参数
 		PrintWriter out = response.getWriter();
@@ -102,35 +101,71 @@ public class AdminServlet extends HttpServlet {
 			System.out.println("参数格式不对");
 			action = "errorReq";
 		}
+		if(action.equals("errorReq")){
+			out.write("[]");
+			return;
+		}
+		List<UserInfo> userList = adminService.queryDataByCondition(sqlRoleId, sqlClassId, sqlEecId, eecName);
+		if(userList!=null && userList.size()>0){
+			out.write("[");
+			Iterator<UserInfo> iterator = userList.iterator();
+			UserInfo tmp = null;
+			while(iterator.hasNext()){
+				tmp = iterator.next();
+				out.write("{");
+				out.write("\"classId\":\""+ tmp.getClassId() +"\"," );
+				out.write("\"id\":\""+ tmp.getId() +"\"," );
+				out.write("\"name\":\""+ tmp.getName() +"\"," );
+				out.write("\"sex\":\""+ tmp.getSex() +"\"," );
+				out.write("\"age\":\""+ tmp.getAge() +"\"," );
+				out.write("\"email\":\""+ tmp.getEmail() +"\"," );
+				out.write("\"telephone\":\""+ tmp.getTelephone() +"\"," );
+				out.write("\"roleName\":\""+ tmp.getRoleName() +"\"" );
+				if(!iterator.hasNext()){
+					out.write("}");
+				}else{
+					out.write("},");
+				}
+			}
+			out.write("]");
+		}else{
+			out.write("[]");
+		}
+    }
+    
+    private void insertData(HttpServletRequest request, HttpServletResponse response) throws IOException{
+    	// 添加页面另外需要的数据
+    	// TODO 关于任课老师带多个班级的情况
+    	String classId 		= 	request.getParameter("classId");
+    	String eecId		=  	request.getParameter("eecId");
+		String eecName 		= 	request.getParameter("eecName");
+		String sex			=  	request.getParameter("sex");
+		String age 			= 	request.getParameter("age");
+		String email 		= 	request.getParameter("email");
+		String telephone 	= 	request.getParameter("telephone");
+		String roleId 		= 	request.getParameter("roleId");
 		
+		PrintWriter out = response.getWriter();
+		IAdminService adminService = new AdminServiceImp();
+		if(classId!=null && eecId!=null && eecName!=null && sex !=null
+				&& age !=null && email!=null && telephone!=null && roleId !=null
+				){
+			
+			
+		}else{
+			out.write("{\"error\":\"参数不可以有空值\"}");
+		}
+		
+    }
+	
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String action 		= 	request.getParameter("action");
+		PrintWriter out 	= 	response.getWriter();
 		// 按需请求
 		if(action.equals("getQuery")){
-			List<UserInfo> userList = adminService.queryDataByCondition(sqlRoleId, sqlClassId, sqlEecId, eecName);
-			if(userList!=null && userList.size()>0){
-				Iterator<UserInfo> iterator = userList.iterator();
-				UserInfo tmp = null;
-				while(iterator.hasNext()){
-					tmp = iterator.next();
-					out.write("{");
-					out.write("\"classId\":\""+ tmp.getClassId() +"\"," );
-					out.write("\"id\":\""+ tmp.getId() +"\"," );
-					out.write("\"name\":\""+ tmp.getName() +"\"," );
-					out.write("\"sex\":\""+ tmp.getSex() +"\"," );
-					out.write("\"age\":\""+ tmp.getAge() +"\"," );
-					out.write("\"email\":\""+ tmp.getEmail() +"\"," );
-					out.write("\"telephone\":\""+ tmp.getTelephone() +"\"," );
-					out.write("\"roleName\":\""+ tmp.getRoleName() +"\"," );
-					if(!iterator.hasNext()){
-						out.write("}");
-					}else{
-						out.write("},");
-					}
-				}
-			}else{
-				out.write("[]");
-			}
+			queryDate(request, response);
 		}else if(action.equals("insertData")){
-			
+			insertData(request, response);
 		}else if(action.equals("deleteData")){
 			
 		}else if(action.equals("updateData")){

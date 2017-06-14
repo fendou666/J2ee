@@ -19,6 +19,7 @@ public class DBUtil {
 	private static DBUtil db = new DBUtil(); 
 	
 	private DBUtil(){
+		
 		if(!getDbInitInfo()){
 			errInfo = "加载数据库配置文件失败";
 		}else{
@@ -70,6 +71,7 @@ public class DBUtil {
 		}
 		try {
 			PreparedStatement ps = conn.prepareStatement(sql);
+			//PreparedStatement ps = conn.prepareStatement(sql,ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
 			if(objList!=null){
 				for(int i=0; i<objList.size();i++){
 					ps.setObject(i+1, objList.get(i));
