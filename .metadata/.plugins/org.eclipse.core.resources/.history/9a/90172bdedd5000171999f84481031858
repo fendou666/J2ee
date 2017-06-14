@@ -1,0 +1,5 @@
+package com.chinasofti.student.model.service;
+
+public interface IAdminService {
+	public 
+}

@@ -34,15 +34,30 @@ public class PageServlet extends HttpServlet {
         super();
         // TODO Auto-generated constructor stub
     }
-    public int getPageMode(String pageMode){
-    	
-    	return 0;
+    public void getPageMode(String pageMode, SqlDataPage stuPage){
+    	if(pageMode.equals("first")){
+    		stuPage.getFirstPage();
+    	}else if(pageMode.equals("pre")){
+    		stuPage.getPrePage();
+    	}else if(pageMode.equals("next")){
+    		stuPage.getNextPage();
+    	}else if(pageMode.equals("last")){
+    		stuPage.getLastPage();
+    	}else{
+    		try{
+    			stuPage.getCustomPage(Integer.parseInt(pageMode));
+    		}catch(NumberFormatException e){
+    			System.out.println("传入指定页参数有问题，跳入首页");
+    			stuPage.getCustomPage(1);
+    		}
+    	}
     }
     
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		System.out.println("进入get请求");
 		String action = request.getParameter("action");
 		PrintWriter out = response.getWriter();
 		IStudentService studentService = new StudentServiceImp();
@@ -51,6 +66,7 @@ public class PageServlet extends HttpServlet {
 			System.out.println("进入seachByNameJSONPage");
 			String name = request.getParameter("name");
 			String pageMode = request.getParameter("pageIndex");
+			
 			// 初始化数据库page JavaBean
 			HashMap<String,SqlDataPage> sqlPageHashSet  = (HashMap<String,SqlDataPage>)request.getSession().getAttribute("sqlPageList");
 			SqlDataPage stuPage = null;
@@ -63,9 +79,19 @@ public class PageServlet extends HttpServlet {
 			}else{
 				stuPage = (SqlDataPage)sqlPageHashSet.get("stuPage");
 			}
+			System.out.println("传参为" + pageMode);
+			if(pageMode==null){
+				out.write("[]");
+				return;
+			}
+			getPageMode(pageMode, stuPage);
+			System.out.println("当前请求页码是 :" + stuPage.getCurrentPage());
+			sqlPageHashSet.put("stuPage", stuPage);
+			
 			out.write("[");
 			if(name!=null){
 				List<StudentInfo> stuList = studentService.getStudentByName(name, stuPage);
+				System.out.println("所有记录条数" + stuPage.getAllRows());
 				if(stuList!=null && stuList.size()>0){
 					Iterator<StudentInfo> iterator = stuList.iterator();
 					StudentInfo tmp = null;
@@ -90,6 +116,7 @@ public class PageServlet extends HttpServlet {
 			}else{
 				System.out.println("用户名为空");
 			}
+			request.getSession().setAttribute("sqlPageList", sqlPageHashSet);
 			out.write("]");
 		}
 	}
@@ -98,7 +125,7 @@ public class PageServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+		doGet(request, response);
 	}
 
 }

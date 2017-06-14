@@ -101,14 +101,15 @@ public class DBUtil {
 		return rs;
 	}
 	
-	public ArrayList prepareCallQueryData(String sql, ArrayList<sqlFuncObj> objList){
-		ArrayList ret = null;
+	public static ArrayList prepareCallQueryData(String sql, ArrayList<sqlFuncObj> objList){
+		ArrayList<sqlFuncObj> ret = null;
 		try {
 			CallableStatement pc = conn.prepareCall(sql);
 			if(objList!=null){
 				sqlFuncObj tmp = null;
 				for(int i=0; i<objList.size();i++){
 					tmp = objList.get(i);
+					System.out.println("tmp为" + tmp);
 					if(tmp.getParmsType().equals("in")){
 						pc.setObject(tmp.getParamsIndex(), tmp.getObj());
 					}
@@ -121,15 +122,18 @@ public class DBUtil {
 				}
 			}
 			System.out.println("sql执行语句为:" + sql);
+			// 关于执行如果只是执行没有返回值，如何判定是否执行成功
 			pc.execute();
 			if(objList!=null){
 				sqlFuncObj tmp = null;
 				for(int i=0; i<objList.size();i++){
 					tmp = objList.get(i);
 					if(tmp.getParmsType().equals("out") || tmp.getParmsType().equals("inOut")){
-						ret.add(pc.getObject(tmp.getParamsIndex()));
+						tmp.setObj(pc.getObject(tmp.getParamsIndex()));
+						//ret.add(pc.getObject(tmp.getParamsIndex()));
 					}
 				}
+				ret = objList;
 			}
 		} catch (SQLException e1) {
 			e1.printStackTrace();

@@ -34,57 +34,43 @@
 
 <script type="text/javascript" src="../Myjs/jquery-1.7.2.min.js"></script>
 <script type="text/javascript">
-	
-	
-	function getStuInfo(forword){
-		$.post(
-			"<%=request.getContextPath()%>/OracleOperationServlet",
-			{
-				action:"seachByNameJSONPage",
-				sqlPageHashMap:"stuPage",
-				pageIndex: forword,
-				name:$("#stuName").val()
-			},
-			function(data){
-				var students = eval(data);
-				var htmlData = "";
-				var student = "";
-				var stuInfo = null;
-				htmlData +="<caption>学员信息一览</caption>";
-				htmlData += "<tr><td>序号</td><td>学号</td><td>姓名</td><td>性别</td><td>年龄</td><td>毕业院校</td><td colspan=\"2\">操作</td></tr>"
-				$.each(students ,function(i){
-						htmlData += "<tr>"
-						htmlData += "<td>" + students[i].id  +"</td>";
-						htmlData += "<td>" + students[i].num  +"</td>";
-						htmlData += "<td>" + students[i].name  +"</td>";
-						htmlData += "<td>" + students[i].age  +"</td>";
-						htmlData += "<td>" + students[i].sex  +"</td>";
-						htmlData += "<td>" + students[i].school  +"</td>";
-						htmlData += "<td><a href=\"<%=request.getContextPath() %>/OracleOperationServlet?action=seachById&id="+ students[i].id +"\">修改</a></td>";
-						htmlData += "<td><a href=\"<%=request.getContextPath() %>/OracleOperationServlet?action=del&delNum="+ students[i].id +"\">删除</a></td>";
-						htmlData += "</tr>";
-				})
-				if(students.length == 0){
-					htmlData += "<tr >";
-					htmlData += "<td colspan=\"7\">没有获取到数据</td>";
-					htmlData += "</tr>";
-				}else{
-					htmlData +=  '<td colspan="2"><input type="button"  onclick="getStuInfo(\'first\')" value="首页" ></td>';
-					htmlData +=  '<td colspan="1"><input type="button"  onclick="getStuInfo(\'pre\')" value="前页" ></td>';
-					htmlData +=  '<td colspan="1"><input type="button"  onclick="getStuInfo(\'next\')" value="次页" ></td>';
-					htmlData +=  '<td colspan="2"><input type="button"  onclick="getStuInfo(\'last\')" value="尾页" ></td>';
-					htmlData +=  '<td colspan="2"><input type="number" id="pageIndex">';
-					htmlData +=  '<input type="button" onclick="getStuInfo($(\'pageIndex\').val())" value="指定页" ></td>';
-				}
-				$("#tb").html(htmlData);
-			},
-			"JSON"
-		)
-	}
-	
+
  	$(function(){
 		$("#subB").click(function(){
-			getStuInfo('first');
+			$.post(
+				"<%=request.getContextPath()%>/OracleOperationServlet",
+				{
+					action:"seachByNameJSON",
+					name:$("#stuName").val()
+				},
+				function(data){
+					var students = eval(data);
+					var htmlData = "";
+					var student = "";
+					var stuInfo = null;
+					htmlData +="<caption>学员信息一览</caption>";
+					htmlData += "<tr><td>序号</td><td>学号</td><td>姓名</td><td>性别</td><td>年龄</td><td>毕业院校</td><td colspan=\"2\">操作</td></tr>"
+					$.each(students ,function(i){
+							htmlData += "<tr>"
+							htmlData += "<td>" + students[i].id  +"</td>";
+							htmlData += "<td>" + students[i].num  +"</td>";
+							htmlData += "<td>" + students[i].name  +"</td>";
+							htmlData += "<td>" + students[i].age  +"</td>";
+							htmlData += "<td>" + students[i].sex  +"</td>";
+							htmlData += "<td>" + students[i].school  +"</td>";
+							htmlData += "<td><a href=\"<%=request.getContextPath() %>/OracleOperationServlet?action=seachById&id="+ students[i].id +"\">修改</a></td>";
+							htmlData += "<td><a href=\"<%=request.getContextPath() %>/OracleOperationServlet?action=del&delNum="+ students[i].id +"\">删除</a></td>";
+							htmlData += "</tr>";
+					})
+					if(students.length == 0){
+						htmlData += "<tr >";
+						htmlData += "<td colspan=\"7\">没有获取到数据</td>";
+						htmlData += "</tr>";
+					}
+					$("#tb").html(htmlData);
+				},
+				"JSON"
+			)
 		})
 	})
 
@@ -140,14 +126,6 @@
 						<td>${tmp.school}</td>
 						<td><a href="<%=request.getContextPath() %>/OracleOperationServlet?action=seachById&id=${tmp.id}">修改</a></td>
 						<td><a href="<%=request.getContextPath() %>/OracleOperationServlet?action=del&delNum=${tmp.id}">删除</a></td>
-						<td colspan="2"><input type="button"  onclick="getStuInfo('first')" value="首页" ></td>
-						<td colspan="1"><input type="button"  onclick="getStuInfo('pre')" value="前页" ></td>
-						<td colspan="1"><input type="button"  onclick="getStuInfo('next')" value="次页" ></td>
-						<td colspan="2"><input type="button"  onclick="getStuInfo('last')" value="尾页" ></td>
-						<td colspan="2">
-							<input type="number" id="pageIndex">
-							<input type="button" onclick="getStuInfo($('pageIndex').val())" value="指定页" >
-						</td>
 					</tr>
 				</c:forEach>
 			</c:if>

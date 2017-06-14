@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <launchConfiguration type="org.eclipse.jdt.launching.localJavaApplication">
 <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
-<listEntry value="/StudentInfo01/src/com/chinasofti/student/model/dao/DAOUserAccessANWImp.java"/>
+<listEntry value="/StudentInfo01/src/com/chinasofti/eecuser/model/dao/DAOUserAccessANWImp.java"/>
 </listAttribute>
 <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
 <listEntry value="1"/>
 </listAttribute>
-<stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="com.chinasofti.student.model.dao.DAOUserAccessANWImp"/>
+<stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="com.chinasofti.eecuser.model.dao.DAOUserAccessANWImp"/>
 <stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="StudentInfo01"/>
 </launchConfiguration>

@@ -9,5 +9,5 @@
 <typeInfo handle="=J20170605/D:\/java\/Tomcat8.0\/lib\/catalina-storeconfig.jar&lt;org.apache.catalina.storeconfig(IStoreConfig.class[IStoreConfig" modifiers="1537" timestamp="1375388112000"/>
 <typeInfo handle="=J20170605/src&lt;com.study.mvc.model.dao{IStudentDAO.java[IStudentDAO" modifiers="513" timestamp="1496653862841"/>
 <typeInfo handle="=J20170606JSTL/D:\/java\/Tomcat8.0\/lib\/jsp-api.jar&lt;javax.servlet.jsp.tagext(TagSupport.class[TagSupport" modifiers="33" timestamp="1375388114000"/>
-<typeInfo handle="=StudentInfo01/src&lt;com.chinasofti.student.model.dao{IDAOUserAccessANW.java[IDAOUserAccessANW" modifiers="513" timestamp="1496919537477"/>
+<typeInfo handle="=StudentInfo01/src&lt;com.chinasofti.eecuser.model.dao{IAdminDAO.java[IAdminDAO" modifiers="513" timestamp="1497430955281"/>
 </typeInfoHistroy>

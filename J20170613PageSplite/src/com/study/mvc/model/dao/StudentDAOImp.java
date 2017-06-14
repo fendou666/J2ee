@@ -65,11 +65,48 @@ public class StudentDAOImp implements IStudentDAO {
 
 	@Override
 	public HashMap getStudentByName(String name, SqlDataPage stuPage) {
+		
 		HashMap stuMp = null;
+		List<StudentInfo> stuList = null;
 		ArrayList<sqlFuncObj> params = new ArrayList<sqlFuncObj>();
-		String sql = "{? =callgetOnePageStuInfo(?,?,?,?) }";
-		Object aa = new ResultSet();
-		params.add(new sqlFuncObj("out", "1", (new ResultSet()), OracleTypes.CURSOR));
+		String sql = "{?=call getOnePageStuInfo(?,?,?,?)}";
+		int allRecordRows = 0;
+		params.add(new sqlFuncObj("out", 1, new Object(), OracleTypes.CURSOR));
+		params.add(new sqlFuncObj("in", 2, stuPage.getPageMaxRows(), OracleTypes.INTEGER));
+		params.add(new sqlFuncObj("in", 3, stuPage.getCurrentPage(), OracleTypes.INTEGER));
+		params.add(new sqlFuncObj("in", 4, name, OracleTypes.VARCHAR));
+		params.add(new sqlFuncObj("out", 5, allRecordRows, OracleTypes.INTEGER));
+		params = DBUtil.prepareCallQueryData(sql, params);
+		
+		ResultSet rs = (ResultSet)params.get(0).getObj();
+		stuPage.setAllRows((int)params.get(4).getObj());
+		stuPage.setMaxPageIndexByAllRows();
+		
+		System.out.println("更新后stuPage为" + stuPage);
+		if(rs!=null){
+			try {
+				stuMp = new HashMap<String, List<StudentInfo>>();
+				stuList = new ArrayList<StudentInfo>();
+				while(rs.next()){
+					// TODO为什么报错
+					/*if(rs.first()){
+						System.out.println("rs first");
+					}*/
+					System.out.println("id 为 "  + rs.getString("id"));
+					stuList.add(new StudentInfo(
+							Integer.parseInt(rs.getString("id")),
+							Integer.parseInt(rs.getString("stuNum")),
+							rs.getString("name"),
+							rs.getString("sex"),
+							Integer.parseInt(rs.getString("age")),
+							rs.getString("gradeFrom")));
+				}
+				stuMp.put("stuList", stuList);
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return stuMp;
 		
 	}
 	
@@ -237,6 +274,12 @@ public class StudentDAOImp implements IStudentDAO {
 
 	public static void main(String[] args) {
 		new StudentDAOImp().getStudentByName("刘亦菲");
+		
+		String name = "ls";
+		SqlDataPage stuPage = new SqlDataPage();
+		stuPage.setCurrentPage(1);
+		stuPage.setPageMaxRows(10);
+		new StudentDAOImp().getStudentByName("刘亦菲", stuPage);
 	}
 
 	
