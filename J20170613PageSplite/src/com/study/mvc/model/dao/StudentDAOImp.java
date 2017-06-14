@@ -12,6 +12,7 @@ import com.study.mvc.model.javabean.SqlDataPage;
 import com.study.mvc.model.javabean.StudentInfo;
 import com.study.mvc.model.javabean.sqlFuncObj;
 import com.study.mvc.tools.DBUtil;
+import com.sun.rowset.JdbcRowSetImpl;
 
 public class StudentDAOImp implements IStudentDAO {
 
@@ -69,6 +70,7 @@ public class StudentDAOImp implements IStudentDAO {
 		HashMap stuMp = null;
 		List<StudentInfo> stuList = null;
 		ArrayList<sqlFuncObj> params = new ArrayList<sqlFuncObj>();
+<<<<<<< HEAD
 		String sql = "{?=call getOnePageStuInfo(?,?,?,?)}";
 		int allRecordRows = 0;
 		params.add(new sqlFuncObj("out", 1, new Object(), OracleTypes.CURSOR));
@@ -108,6 +110,12 @@ public class StudentDAOImp implements IStudentDAO {
 		}
 		return stuMp;
 		
+=======
+		String sql = "{? =callgetOnePageStuInfo(?,?,?,?) }";
+		Object aa = new JdbcRowSetImpl();
+		params.add(new sqlFuncObj("out", 1, new JdbcRowSetImpl(), OracleTypes.CURSOR));
+		params.add(new sqlFuncObj("out", 1, , OracleTypes.CURSOR));
+>>>>>>> d16740dd4292f616553c1e84c3c9bd999b1127f7
 	}
 	
 	

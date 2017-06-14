@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
+<<<<<<< HEAD
+=======
+<fullyQualifiedTypeName name="com.exercise.javaneed.CatchFileManage"/>
+<fullyQualifiedTypeName name="java.util.HashSet"/>
+<fullyQualifiedTypeName name="javax.servlet.ServletContext"/>
+<fullyQualifiedTypeName name="jdk.management.resource.internal.inst.SimpleAsynchronousFileChannelImplRMHooks"/>
+<fullyQualifiedTypeName name="com.exercise.java.UserInfo"/>
+<fullyQualifiedTypeName name="java.awt.image.BufferedImage"/>
+<fullyQualifiedTypeName name="java.awt.Font"/>
+<fullyQualifiedTypeName name="java.util.Random"/>
+>>>>>>> d16740dd4292f616553c1e84c3c9bd999b1127f7
 <fullyQualifiedTypeName name="javax.imageio.ImageIO"/>
 <fullyQualifiedTypeName name="javax.servlet.http.HttpServlet"/>
 <fullyQualifiedTypeName name="javax.servlet.annotation.WebFilter"/>
@@ -46,6 +57,7 @@
 <fullyQualifiedTypeName name="oracle.jdbc.OracleTypes"/>
 <fullyQualifiedTypeName name="java.sql.ResultSet"/>
 <fullyQualifiedTypeName name="java.lang.Object"/>
+<<<<<<< HEAD
 <fullyQualifiedTypeName name="com.study.mvc.tools.DBUtil"/>
 <fullyQualifiedTypeName name="com.chinasofti.student.javabean.SqlDataPage"/>
 <fullyQualifiedTypeName name="com.chinasofti.student.model.service.IAdminService"/>
@@ -60,4 +72,7 @@
 <fullyQualifiedTypeName name="com.chinasofti.eecuser.model.javabean.UserInfo"/>
 <fullyQualifiedTypeName name="java.lang.Integer"/>
 <fullyQualifiedTypeName name="java.lang.Long"/>
+=======
+<fullyQualifiedTypeName name="com.sun.rowset.JdbcRowSetImpl"/>
+>>>>>>> d16740dd4292f616553c1e84c3c9bd999b1127f7
 </qualifiedTypeNameHistroy>
