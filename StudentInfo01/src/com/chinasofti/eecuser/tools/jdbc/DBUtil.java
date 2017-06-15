@@ -64,7 +64,7 @@ public class DBUtil {
 		return errInfo;
 	}
 	
-	public  ResultSet queryDate(String sql, ArrayList objList){
+	public  ResultSet queryDate(String sql, ArrayList<Object> objList){
 		ResultSet rs = null;
 		if(errInfo!=null){
 			return rs;
@@ -88,7 +88,7 @@ public class DBUtil {
 	}
 	
 	
-	public  int updateSql(String sql,  ArrayList objList){
+	public  int updateSql(String sql,  ArrayList<Object> objList){
 		int ret = 0;
 		try {
 			PreparedStatement ps = conn.prepareStatement(sql);
@@ -99,7 +99,7 @@ public class DBUtil {
 				}
 			}
 			ret = ps.executeUpdate();
-			System.out.println("执行插入完毕");
+			System.out.println("增删改执行的sql 是" + sql);
 		} catch (SQLException e) {
 			errInfo = "增删该sql执行失败";
 			System.out.println(errInfo);

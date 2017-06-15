@@ -4,10 +4,10 @@ public class sqlFuncObj {
 	
 	
 	
-	private String parmsType;
-	private int paramsIndex;
-	private Object obj;
-	private int sqlType;
+	private String parmsType; //in out inOut
+	private int paramsIndex; // sql 语句index位置
+	private Object obj;  // sql语句值
+	private int sqlType; // sql 类型
 	
 	public sqlFuncObj(String parmsType, int paramsIndex, Object obj, int sqlType) {
 		this.parmsType = parmsType;

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;XEecUserInfo/WebContent/msg04.jsp&apos; to &apos;msg.jsp&apos;" description="Rename resource &apos;msg04.jsp&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="WebContent/msg04.jsp" name="msg.jsp" stamp="1497509225821" updateReferences="true"/>
+</session>

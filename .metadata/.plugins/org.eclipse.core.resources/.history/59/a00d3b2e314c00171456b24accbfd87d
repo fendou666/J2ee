@@ -1,8 +1,0 @@
-package com.chinasofti.student.javabean;
-
-public class UserAceessANW {
-	private int QSTVerify_id;
-	private String answer1;
-	private String answer2;
-	
-}

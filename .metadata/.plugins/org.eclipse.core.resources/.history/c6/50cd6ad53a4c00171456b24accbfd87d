@@ -1,2 +1,0 @@
-driver=oracle.jdbc.OracleDriver
-conn=jdbc:oracle:thin:@127.0.0.1
