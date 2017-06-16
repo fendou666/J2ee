@@ -1,0 +1,8 @@
+package com.study.struts2.pojo;
+
+public class UserInfo {
+	private String name;
+	private String sex;
+	private String age;
+	
+}

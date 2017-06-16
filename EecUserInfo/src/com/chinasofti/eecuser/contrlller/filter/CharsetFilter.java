@@ -16,13 +16,13 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet Filter implementation class CharsetFilter
  */
-@WebFilter(dispatcherTypes = {
+/*@WebFilter(dispatcherTypes = {
 				DispatcherType.REQUEST, 
 				DispatcherType.FORWARD, 
 				DispatcherType.INCLUDE, 
 				DispatcherType.ERROR
 		}
-					, urlPatterns = { "/*" })
+					, urlPatterns = { "/*" })*/
 public class CharsetFilter implements Filter {
 
     /**

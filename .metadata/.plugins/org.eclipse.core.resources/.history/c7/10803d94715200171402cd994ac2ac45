@@ -1,0 +1,21 @@
+package com.study.struts2.action;
+
+import com.study.struts2.pojo.UserInfo;
+
+public class PojoAction {
+
+	private UserInfo u;
+	
+	public UserInfo getU() {
+		return u;
+	}
+
+	public void setU(UserInfo u) {
+		this.u = u;
+	}
+
+	public String test(){
+		System.out.println("直接给action 基本类型属性赋值");
+		return "success";
+	}
+}

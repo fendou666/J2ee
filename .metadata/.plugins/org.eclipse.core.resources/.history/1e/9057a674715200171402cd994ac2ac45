@@ -1,0 +1,10 @@
+package com.study.struts2.action;
+
+import com.study.struts2.pojo.UserInfo;
+
+public class PojoAction {
+	private UserInfo u;
+	
+	
+	
+}

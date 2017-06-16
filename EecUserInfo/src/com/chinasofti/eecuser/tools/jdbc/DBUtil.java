@@ -22,8 +22,9 @@ public class DBUtil {
 		
 		if(!getDbInitInfo()){
 			errInfo = "加载数据库配置文件失败";
+			System.out.println(errInfo);
 		}else{
-			getConn();
+			getConnection();
 		}
 	}
 	private boolean getDbInitInfo(){
@@ -43,15 +44,17 @@ public class DBUtil {
 		}
 		return ret;
 	}
-	private Connection getConn(){
+	private Connection getConnection(){
 		try {
 			Class.forName(driver);
 			conn = DriverManager.getConnection(url, user, pwd);
 		} catch (ClassNotFoundException e) {
 			errInfo = "没有找到JDBC驱动";
+			System.out.println(errInfo);
 			e.printStackTrace();
 		} catch (SQLException e) {
 			errInfo = "创建数据库连接失败";
+			System.out.println(errInfo);
 			e.printStackTrace();
 		}
 		return conn;
@@ -63,15 +66,17 @@ public class DBUtil {
 	public String getErrInfo(){
 		return errInfo;
 	}
-	
-	public  ResultSet queryDate(String sql, ArrayList objList){
+	//DBUtil.getJDBC().getConn();
+	public Connection getConn(){
+		return db.conn;
+	}
+	public  ResultSet queryDate(String sql, ArrayList<Object> objList){
 		ResultSet rs = null;
 		if(errInfo!=null){
 			return rs;
 		}
 		try {
 			PreparedStatement ps = conn.prepareStatement(sql);
-			//PreparedStatement ps = conn.prepareStatement(sql,ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
 			if(objList!=null){
 				for(int i=0; i<objList.size();i++){
 					ps.setObject(i+1, objList.get(i));
@@ -82,6 +87,7 @@ public class DBUtil {
 			rs = ps.executeQuery();
 		} catch (SQLException e1) {
 			errInfo = "查询sql执行失败";
+			System.out.println(errInfo);
 			e1.printStackTrace();
 		}
 		return rs;

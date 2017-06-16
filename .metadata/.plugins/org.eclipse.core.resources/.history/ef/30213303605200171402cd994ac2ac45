@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<constant name="struts.devMode" value="true"></constant>
+	<package name="mypak" namespace="/abc" extends="struts-default">
+		<action name="A1">
+			<result name="sue">OK.jsp</result>
+		</action>
+		<action name="A2">
+			<result name="sue">/OK.jsp</result>
+		</action>
+		<action name="A3">
+			<result name="success">WorkIn/OK.jsp</result>
+		</action>
+		<action name="A4">
+			<result name="success">/WorkIn/OK.jsp</result>
+		</action>
+		<action name="HelloForm1"  class="com.study.struts2.action.HelloFormAction">
+			<result name="success">OK.jsp</result>
+			<result name="error">NO.jsp</result>
+		</action>
+		<action name="HelloForm2"  class="com.study.struts2.action.HelloFormAction">
+			<result name="success">/OK.jsp</result>
+			<result name="error">/NO.jsp</result>
+		</action>
+		<action name="HelloForm3"  class="com.study.struts2.action.HelloFormAction">
+			<result name="success">WorkIn/OK.jsp</result>
+			<result name="error">/WorkIn/OK.jsp</result>
+		</action>
+		<action name="HelloForm4"  class="com.study.struts2.action.HelloFormAction">
+			<result name="success">OK.jsp</result>
+			<result name="error">NO.jsp</result>
+		</action>
+	</package>
+	
+</struts>
+    
+    

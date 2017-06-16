@@ -1,0 +1,13 @@
+package com.study.struts2.action;
+
+public class TestAction {
+	public String execute() throws Exception {
+		message = "我是HelloFormAction里面的message属性";
+		if(userName.equals("ls")){
+			return SUCCESS;
+		}else{
+			return ERROR;
+		}
+		
+	}
+}
