@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <typeInfoHistroy>
-<typeInfo handle="=S20170616/E:\/1java\/J2ee\/S20170616\/WebContent\/WEB-INF\/lib\/xwork-core-2.3.20.jar&lt;com.opensymphony.xwork2(ActionSupport.class[ActionSupport" modifiers="33" timestamp="1497520020880"/>
-<typeInfo handle="=S20170619/D:\/java\/jdk1.8\/jre\/lib\/rt.jar&lt;java.lang(Exception.class[Exception" modifiers="33" timestamp="1491991718320"/>
-<typeInfo handle="=S20170619/E:\/1java\/J2ee\/S20170619\/WebContent\/WEB-INF\/lib\/xwork-core-2.3.20.jar&lt;com.opensymphony.xwork2(ActionSupport.class[ActionSupport" modifiers="33" timestamp="1497520020880"/>
-<typeInfo handle="=S20170619/E:\/1java\/J2ee\/S20170619\/WebContent\/WEB-INF\/lib\/xwork-core-2.3.20.jar&lt;com.opensymphony.xwork2.interceptor(Interceptor.class[Interceptor" modifiers="1537" timestamp="1497520020880"/>
-<typeInfo handle="=EecUserInfo/src&lt;com.chinasofti.eecuser.model.dao{IHeadTeacherDAO.java[IHeadTeacherDAO" modifiers="513" timestamp="1497863894654"/>
-<typeInfo handle="=EecUserInfo/src&lt;com.chinasofti.eecuser.model.dao{ILeaderDAO.java[ILeaderDAO" modifiers="513" timestamp="1497863689165"/>
-<typeInfo handle="=EecUserInfo/src&lt;com.chinasofti.eecuser.model.dao{IMonitorDAO.java[IMonitorDAO" modifiers="513" timestamp="1497863778273"/>
-<typeInfo handle="=EecUserInfo/src&lt;com.chinasofti.eecuser.model.dao{IPublicDAO.java[IPublicDAO" modifiers="513" timestamp="1497863772204"/>
-<typeInfo handle="=EecUserInfo/src&lt;com.chinasofti.eecuser.model.dao{IRegDAO.java[IRegDAO" modifiers="513" timestamp="1497863798394"/>
-<typeInfo handle="=EecUserInfo/src&lt;com.chinasofti.eecuser.model.dao{ISafeDAO.java[ISafeDAO" modifiers="513" timestamp="1497863812227"/>
-<typeInfo handle="=EecUserInfo/src&lt;com.chinasofti.eecuser.model.dao{IStudentDAO.java[IStudentDAO" modifiers="513" timestamp="1497863857343"/>
-<typeInfo handle="=EecUserInfoStruts2/E:\/1java\/J2ee\/EecUserInfoStruts2\/WebContent\/WEB-INF\/lib\/xwork-core-2.3.20.jar&lt;com.opensymphony.xwork2(ActionSupport.class[ActionSupport" modifiers="33" timestamp="1497520020880"/>
+<typeInfo handle="=S20170619/E:\/1java\/J2ee\/S20170619\/WebContent\/WEB-INF\/lib\/xwork-core-2.3.20.jar&lt;com.opensymphony.xwork2.interceptor(Interceptor.class[Interceptor" modifiers="1537" timestamp="1497912652522"/>
+<typeInfo handle="=EecUserInfo/src&lt;com.chinasofti.eecuser.model.dao{IHeadTeacherDAO.java[IHeadTeacherDAO" modifiers="513" timestamp="1497912647678"/>
+<typeInfo handle="=EecUserInfo/src&lt;com.chinasofti.eecuser.model.dao{ILeaderDAO.java[ILeaderDAO" modifiers="513" timestamp="1497912647678"/>
+<typeInfo handle="=EecUserInfo/src&lt;com.chinasofti.eecuser.model.dao{IMonitorDAO.java[IMonitorDAO" modifiers="513" timestamp="1497912647678"/>
+<typeInfo handle="=EecUserInfo/src&lt;com.chinasofti.eecuser.model.dao{IPublicDAO.java[IPublicDAO" modifiers="513" timestamp="1497912647678"/>
+<typeInfo handle="=EecUserInfo/src&lt;com.chinasofti.eecuser.model.dao{IRegDAO.java[IRegDAO" modifiers="513" timestamp="1497912647678"/>
+<typeInfo handle="=EecUserInfo/src&lt;com.chinasofti.eecuser.model.dao{ISafeDAO.java[ISafeDAO" modifiers="513" timestamp="1497912647678"/>
+<typeInfo handle="=EecUserInfo/src&lt;com.chinasofti.eecuser.model.dao{IStudentDAO.java[IStudentDAO" modifiers="513" timestamp="1497912647678"/>
+<typeInfo handle="=S20170616/E:\/1java\/J2ee\/S20170616\/WebContent\/WEB-INF\/lib\/xwork-core-2.3.20.jar&lt;com.opensymphony.xwork2(ActionSupport.class[ActionSupport" modifiers="1" timestamp="1497912652397"/>
+<typeInfo handle="=S20170619/D:\/java\/jdk1.8\/jre\/lib\/rt.jar&lt;java.lang(Exception.class[Exception" modifiers="1" timestamp="1492003538267"/>
+<typeInfo handle="=S20170619/E:\/1java\/J2ee\/S20170619\/WebContent\/WEB-INF\/lib\/xwork-core-2.3.20.jar&lt;com.opensymphony.xwork2(ActionSupport.class[ActionSupport" modifiers="1" timestamp="1497912652522"/>
+<typeInfo handle="=EecUserInfoStruts2/E:\/1java\/J2ee\/EecUserInfoStruts2\/WebContent\/WEB-INF\/lib\/xwork-core-2.3.20.jar&lt;com.opensymphony.xwork2(ActionSupport.class[ActionSupport" modifiers="1" timestamp="1497912647725"/>
 </typeInfoHistroy>
