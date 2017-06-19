@@ -1,0 +1,5 @@
+package com.study.struts2.exception;
+
+public class Myexcetion extends Exception {
+	
+}

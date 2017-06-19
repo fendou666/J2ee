@@ -1,10 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="com.chinasofti.eecuser.model.javabean.UserInfo"/>
 <fullyQualifiedTypeName name="java.lang.Integer"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="java.lang.Object"/>
-<fullyQualifiedTypeName name="com.opensymphony.xwork2.ModelDriven"/>
-<fullyQualifiedTypeName name="com.study.struts2.pojo.UserInfo"/>
 <fullyQualifiedTypeName name="com.opensymphony.xwork2.ActionSupport"/>
+<fullyQualifiedTypeName name="com.study.struts2.pojo.UserInfo"/>
+<fullyQualifiedTypeName name="com.study.struts2.exception.Myexcetion"/>
+<fullyQualifiedTypeName name="com.opensymphony.xwork2.ModelDriven"/>
+<fullyQualifiedTypeName name="com.chinasofti.eecuser.model.javabean.UserInfo"/>
+<fullyQualifiedTypeName name="com.chinasofti.eecuser.model.dao.ILoginDAO"/>
+<fullyQualifiedTypeName name="com.chinasofti.eecuser.model.dao.LoginDAOImp"/>
+<fullyQualifiedTypeName name="com.chinasofti.eecuser.model.service.ILoginService"/>
+<fullyQualifiedTypeName name="com.chinasofti.eecuser.model.service.LoginServiceImp"/>
+<fullyQualifiedTypeName name="com.sun.xml.internal.bind.v2.runtime.unmarshaller.Intercepter"/>
+<fullyQualifiedTypeName name="com.opensymphony.xwork2.interceptor.Interceptor"/>
+<fullyQualifiedTypeName name="com.opensymphony.xwork2.ActionContext"/>
+<fullyQualifiedTypeName name="java.util.Map"/>
+<fullyQualifiedTypeName name="javax.servlet.http.HttpServletRequest"/>
 </qualifiedTypeNameHistroy>

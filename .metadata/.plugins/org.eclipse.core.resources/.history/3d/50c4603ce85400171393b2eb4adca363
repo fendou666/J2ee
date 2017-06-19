@@ -1,0 +1,5 @@
+package com.chinasofti.eecuser.contrlller.intercept;
+
+public class CharsetInterceptIOC {
+
+}

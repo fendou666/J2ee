@@ -1,0 +1,24 @@
+package com.study.struts2.action;
+
+import com.opensymphony.xwork2.ActionSupport;
+import com.opensymphony.xwork2.ModelDriven;
+import com.study.struts2.pojo.UserInfo;
+
+public class exceptionTest extends ActionSupport implements ModelDriven<UserInfo> {
+	public UserInfo getU() {
+		return u;
+	}
+
+	public void setU(UserInfo u) {
+		this.u = u;
+	}
+
+	private UserInfo u = new UserInfo();
+	
+	@Override
+	public UserInfo getModel() {
+		return u;
+	}
+
+	
+}

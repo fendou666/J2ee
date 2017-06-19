@@ -7,6 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
+	<!-- <form action="PojoAct" method="post"> -->
+	<!-- 第二种要求数据格式必须匹配  -->
 	<form action="PojoAct">
 		用户名：<input type="text" name="u.name"> <br>
 		密码：<input type="text" name="u.sex"> <br>

@@ -1,0 +1,14 @@
+package com.chinasofti.eecuser.model.service;
+
+public class LoginServiceImp implements ILoginService {
+	private ILoginDAO loginDAO;
+	public LoginServiceImp(){
+		loginDAO = new LoginDAOImp();
+	}
+	@Override
+	public boolean checkLoginInfo() {
+		
+		return false;
+	}
+
+}

@@ -1,0 +1,28 @@
+package com.chinasofti.eecuser.contrlller.action;
+
+import com.chinasofti.eecuser.model.javabean.UserInfo;
+import com.opensymphony.xwork2.ActionSupport;
+
+public class LoginAction extends ActionSupport {
+
+
+	private static final long serialVersionUID = 1L;
+	private UserInfo eecUser = new UserInfo();
+	private String pwd;
+	public UserInfo getEecUser() {
+		return eecUser;
+	}
+
+
+	public void setEecUser(UserInfo eecUser) {
+		this.eecUser = eecUser;
+	}
+	
+	@Override
+	public String execute() throws Exception {
+		System.out.println("Ö´ÐÐ execute·½·¨");
+		
+		return SUCCESS;
+	}
+
+}
