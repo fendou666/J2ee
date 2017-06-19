@@ -1,11 +1,11 @@
-package com.chinasofti.eecuser.model.service;
+package com.chinasofti.eecuser.model.dao;
 
 import java.util.List;
 
 import com.chinasofti.eecuser.model.javabean.SqlDataPage;
 import com.chinasofti.eecuser.model.javabean.UserInfo;
 
-public interface ITheTeacherService {
+public interface ITheTheacherDAO {
 	// ===========个人信息显示=========
 	//	调用肖梦娜方法
 	public UserInfo showPersonalInfo(int id);

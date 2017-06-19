@@ -109,11 +109,8 @@
 		</div>
 		<div id="d3">
 			<div id="d31"><a href="#">个人信息</a></div>
-			<div id="d32"><a href="#">增加管理1</a></div>
-			<div id="d33"><a href="#">增加管理2</a></div>
-			<div id="d34"><a href="#">增加管理3</a></div>
-			<div id="d35"><a href="#">增加管理4</a></div>
-			<div id="d36"><a href="#">增加管理5</a></div>
+			<div id="d32"><a href="#">教师信息管理</a></div>
+			<div id="d33"><a href="#">班级管理</a></div>
 		</div>
 		<div id="d4">
 			<div id="d41">学生信息查询</div>
@@ -143,8 +140,6 @@
 					<td>序号</td><td>班级</td><td>学号</td><td>姓名</td><td>性别</td>
 					<td>年龄</td><td>邮箱</td><td>手机号</td><td>职务</td><td colspan="3">操作</td>
 				</tr>
-				<c:forEach items="">
-				</c:forEach>
 				<tr>
 					<td></td><td></td><td></td><td></td><td></td>
 					<td></td><td></td><td></td><td></td>
