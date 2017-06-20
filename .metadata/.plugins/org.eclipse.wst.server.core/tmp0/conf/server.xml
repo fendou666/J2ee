@@ -125,7 +125,7 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      <Context docBase="E:\1java\J2ee\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\ROOT" path="" reloadable="false"/><Context docBase="E:\1java\J2ee\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\EecUserInfoStruts2" path="/EecUserInfoStruts2" reloadable="true" source="org.eclipse.jst.jee.server:EecUserInfoStruts2"/></Host>
+      <Context docBase="E:\1java\J2ee\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\ROOT" path="" reloadable="false"/><Context docBase="E:\1java\J2ee\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\EecUserInfoStruts2" path="/EecUserInfoStruts2" reloadable="true" source="org.eclipse.jst.jee.server:EecUserInfoStruts2"/><Context docBase="E:\1java\J2ee\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\S20170620" path="/S20170620" reloadable="true" source="org.eclipse.jst.jee.server:S20170620"/></Host>
     </Engine>
   </Service>
 </Server>

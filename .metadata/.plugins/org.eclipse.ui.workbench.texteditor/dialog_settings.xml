@@ -2,30 +2,30 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="id" key="selection"/>
+		<item value="get" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="getParameter"/>
+			<item value="out.write"/>
 			<item value="eecid"/>
 			<item value="QSTVerify_id"/>
 			<item value="getNameCookie"/>
 			<item value="nameCk"/>
 			<item value="nameCheckInfo"/>
 			<item value="port"/>
-			<item value="J2017052"/>
-			<item value="name"/>
 		</list>
 		<list key="replacehistory">
+			<item value="get"/>
+			<item value="out.append"/>
 			<item value="id"/>
 			<item value="eec_id"/>
 			<item value="getEECIdCookie"/>
 			<item value="eecIdCK"/>
 			<item value="eecIdCheckInfo"/>
 			<item value=""/>
-			<item value="user"/>
-			<item value="AS3"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">

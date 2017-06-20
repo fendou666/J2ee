@@ -1,0 +1,26 @@
+package com.study.struts2.action;
+
+import com.opensymphony.xwork2.ActionSupport;
+
+public class Myaction extends ActionSupport {
+	@Override
+	public String execute() throws Exception {
+		return SUCCESS;
+	}
+
+	public String getActionMeb() {
+		return actionMeb;
+	}
+
+	public void setActionMeb(String actionMeb) {
+		this.actionMeb = actionMeb;
+	}
+
+	private String actionMeb;
+	
+	private static final long serialVersionUID = 1L;
+	
+	
+	
+	
+}

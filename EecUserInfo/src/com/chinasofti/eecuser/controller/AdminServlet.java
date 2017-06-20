@@ -15,9 +15,7 @@ import javax.servlet.http.HttpSession;
 
 import com.chinasofti.eecuser.model.javabean.SqlDataPage;
 import com.chinasofti.eecuser.model.javabean.UserInfo;
-import com.chinasofti.eecuser.model.service.AdminServiceImp;
 import com.chinasofti.eecuser.model.service.AdminTheacherServiceImp;
-import com.chinasofti.eecuser.model.service.IAdminService;
 import com.chinasofti.eecuser.model.service.IAdminTheacherService;
 
 /**
