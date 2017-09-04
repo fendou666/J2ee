@@ -1,9 +1,0 @@
-package com.study.struts2.action;
-
-public class TestAction {
-	public String execute() throws Exception {
-		
-		
-		
-	}
-}

@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
-    <wb-module deploy-name="XEecUserInfo">
-        <property name="context-root" value="XEecUserInfo"/>
-        <property name="java-output-path" value="/XEecUserInfo/build/classes"/>
-    </wb-module>
-</project-modules>

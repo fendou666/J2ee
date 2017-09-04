@@ -1,8 +1,0 @@
-package com.study.struts2.action;
-
-public class SqlAction {
-	public String add(){
-		
-		
-	}
-}

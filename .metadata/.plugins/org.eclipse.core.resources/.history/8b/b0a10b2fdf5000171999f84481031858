@@ -1,5 +1,0 @@
-package com.chinasofti.student.model.service;
-
-public class AdminServiceImp implements IAdminService {
-
-}

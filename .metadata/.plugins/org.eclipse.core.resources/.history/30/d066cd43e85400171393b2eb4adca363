@@ -1,7 +1,0 @@
-package com.chinasofti.eecuser.contrlller.intercept;
-
-import com.sun.xml.internal.bind.v2.runtime.unmarshaller.Intercepter;
-
-public class CharsetInterceptIOC implements Intercepter{
-
-}

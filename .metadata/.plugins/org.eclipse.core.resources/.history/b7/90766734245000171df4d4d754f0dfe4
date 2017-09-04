@@ -1,7 +1,0 @@
-package com.study.mvc.model.javabean;
-
-public class SqlDataPage {
-	private int pageMaxRows;
-	private int allRows;
-	private int 
-}
